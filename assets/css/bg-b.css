@@ -1,0 +1,48 @@
+/* Background option B: "Mission Arcade & Silk"
+   Only the hero and final-CTA backgrounds change. Colors come from the brand palette in site.css. */
+
+.hero{
+  --artR:max(3vw,calc(50% - 600px));
+  --arcH:clamp(130px,14vw,200px);
+  background:linear-gradient(180deg,#f6eee4 0%,var(--paper) 45%,#f6ece2 100%);
+}
+.hero-art .sun,.hero .landscape{display:none}
+
+.bgB{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+
+/* Soft color fields that drift slowly */
+.bgB-field{position:absolute;border-radius:50%;animation:bgB-drift 32s ease-in-out infinite alternate}
+.bgB-field.f1{width:64vw;aspect-ratio:1;left:-20vw;top:-36vw;background:radial-gradient(closest-side,rgba(196,226,247,.95),rgba(212,242,247,.5) 55%,rgba(212,242,247,0))}
+.bgB-field.f2{width:58vw;max-width:860px;aspect-ratio:1;right:-12vw;top:-8%;background:radial-gradient(closest-side,rgba(220,192,180,.8),rgba(240,227,213,.4) 60%,rgba(240,227,213,0));animation-duration:40s;animation-direction:alternate-reverse}
+.bgB-field.f3{width:54vw;aspect-ratio:1.6;left:18%;bottom:-16vw;background:radial-gradient(closest-side,rgba(246,217,200,.85),rgba(246,217,200,0));animation-duration:46s}
+@keyframes bgB-drift{to{transform:translate3d(3vw,2vw,0) scale(1.06)}}
+
+/* Nested copper arches behind the photos (echoes the arch-shaped photo frames) */
+.bgB-arches{position:absolute;width:clamp(400px,48vw,680px);right:calc(var(--artR) - 60px);top:-3%;height:auto;
+  -webkit-mask:linear-gradient(#000 55%,transparent 96%);mask:linear-gradient(#000 55%,transparent 96%)}
+
+/* Silk ribbons */
+.bgB-silk{position:absolute;inset:0;width:100%;height:100%}
+.bgB-silk .rib{transform-box:fill-box;transform-origin:50% 50%;animation:bgB-sway 18s ease-in-out infinite alternate}
+.bgB-silk .rib2{animation-duration:26s;animation-direction:alternate-reverse}
+@keyframes bgB-sway{to{transform:translateY(-16px) skewY(-1.2deg)}}
+
+/* Paper grain */
+.bgB-grain{position:absolute;inset:0;opacity:.32;mix-blend-mode:multiply;background-size:240px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .18 0 0 0 0 .13 0 0 0 0 .11 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* California mission arcade along the bottom */
+.bgB-arcade{position:absolute;left:0;right:0;bottom:-1px;height:var(--arcH);z-index:1}
+.bgB-arcade svg{display:block;width:100%;height:100%;overflow:visible}
+
+@media (max-width:860px){
+  .hero{--arcH:120px}
+  .bgB-arches{width:min(110vw,520px);right:calc(50% - min(110vw,520px)/2);top:auto;bottom:calc(var(--arcH) + 40px)}
+}
+
+/* Final CTA: arches + silk, with a navy arcade that runs into the navy footer */
+.final{--arcH:clamp(120px,13vw,190px);padding-bottom:calc(var(--arcH) + clamp(48px,7vw,88px));
+  background:linear-gradient(180deg,var(--sand-3) 0%,#f6dccd 55%,#efc6b2 100%)}
+.final .wrap{position:relative;z-index:2}
+.final .bgB-arches{right:auto;left:calc(50% - clamp(400px,48vw,680px)/2);top:6%;opacity:.55}
+@media (max-width:860px){.final .bgB-arches{left:calc(50% - min(110vw,520px)/2);bottom:auto;top:4%}}

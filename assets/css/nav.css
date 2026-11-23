@@ -1,0 +1,51 @@
+/* Revive Aesthetics OC: main navigation (services dropdown + mobile menu). Shared by every page. */
+.nav{margin-left:clamp(12px,3vw,40px);margin-right:auto}
+.nav-list{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:2px}
+.nav-link{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border:0;background:none;border-radius:999px;font:inherit;font-size:.9rem;font-weight:600;letter-spacing:.03em;color:var(--ink);text-decoration:none;cursor:pointer;transition:color .25s,background-color .25s}
+.nav-link:hover,.nav-dd.open>.nav-link{color:var(--copper-deep);background:rgba(155,91,73,.08)}
+.nav-link .chev{width:14px;height:14px;transition:transform .3s var(--ease)}
+.nav-dd{position:relative}
+.nav-dd.open .chev{transform:rotate(180deg)}
+.nav-panel{position:absolute;left:-20px;top:calc(100% + 12px);width:min(820px,78vw);display:grid;grid-template-columns:repeat(3,1fr) 1.1fr;gap:4px 22px;padding:26px;background:#fff;border-radius:var(--r-lg);box-shadow:var(--shadow-lg);border:1px solid var(--line);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .35s var(--ease),visibility .25s;z-index:60}
+.nav-panel::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.nav-dd.open .nav-panel{opacity:1;visibility:visible;transform:none}
+.nav-col h4{font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.nav-col ul{list-style:none;margin:0 0 14px;padding:0}
+.nav-col a{display:block;padding:8px 10px;margin:0 -10px;border-radius:12px;text-decoration:none;color:var(--ink);transition:background-color .2s}
+.nav-col a b{display:block;font-family:var(--serif);font-size:1.22rem;font-weight:500;line-height:1.2}
+.nav-col a small{display:block;font-size:.76rem;color:var(--muted);line-height:1.35}
+.nav-col a:hover{background:var(--sand-3)}
+.nav-col a:hover b,.nav-col a[aria-current] b{color:var(--copper-deep)}
+.nav-feat{border-radius:var(--r-md);background:linear-gradient(180deg,var(--sky),var(--sand-3));padding:22px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px}
+.nav-feat b{font-family:var(--serif);font-size:1.55rem;font-weight:500;line-height:1.15;color:var(--ink)}
+.nav-feat p{font-size:.84rem;color:#2c4f6d;margin:0}
+.nav-feat .btn{align-self:flex-start}
+.hdr-social{display:flex;gap:2px;margin-right:6px}
+.hdr-social a{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;color:var(--ink);transition:color .2s,background-color .2s}
+.hdr-social a:hover{color:var(--copper-deep);background:rgba(155,91,73,.08)}
+.hdr-social svg{width:18px;height:18px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:rgba(255,255,255,.7);place-items:center;padding:0;color:var(--ink);cursor:pointer}
+.burger svg{width:20px;height:20px}
+.mnav{position:fixed;inset:0;z-index:400;background:var(--paper);display:flex;flex-direction:column;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .3s,transform .4s var(--ease),visibility .3s}
+.mnav.open{opacity:1;visibility:visible;transform:none}
+.mnav-top{display:flex;align-items:center;justify-content:space-between;padding:12px var(--gutter);border-bottom:1px solid var(--line)}
+.mnav-top .logo img{height:52px}
+.mnav-body{padding:12px var(--gutter) 40px;display:grid;gap:0}
+.mnav-body>a,.mnav-body summary{font-family:var(--serif);font-size:1.9rem;line-height:1.2;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.mnav-body summary{list-style:none;cursor:pointer}
+.mnav-body summary::-webkit-details-marker{display:none}
+.mnav-body summary svg{width:22px;height:22px;transition:transform .3s var(--ease)}
+.mnav-body details[open] summary svg{transform:rotate(180deg)}
+.mnav-svc{display:grid;padding:6px 0 14px;border-bottom:1px solid var(--line)}
+.mnav-svc a{text-decoration:none;font-weight:500;padding:10px 0;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--ink)}
+.mnav-svc a small{color:var(--muted);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.mnav-cta{display:grid;gap:10px;margin-top:24px}
+.mnav-cta .btn{justify-content:center}
+.mnav-soc{display:flex;gap:10px;margin-top:20px}
+.mnav-soc a{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--ink)}
+.mnav-soc svg{width:20px;height:20px}
+html.nav-lock{overflow:hidden}
+@media (max-width:1240px){.hdr-social{display:none}}
+@media (max-width:1100px){.nav{display:none}.burger{display:grid}.hdr-cta{margin-left:auto}}
+@media (max-width:1240px) and (min-width:1101px){.hdr-phone span{display:none}}
+@media (max-width:420px){.hdr-cta{gap:6px}.hdr-cta .btn{padding:0 14px}.burger{width:44px;height:44px}}

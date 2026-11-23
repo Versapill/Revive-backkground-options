@@ -1,0 +1,44 @@
+/* Background option C: "Studio Glow"
+   A soft-focus photo of the real studio, washed in brand sand, with floating bokeh light.
+   Only the hero and final-CTA backgrounds change. */
+
+.hero{background:var(--paper)}
+.hero-art .sun,.hero .landscape{display:none}
+
+.bgC{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bgC-photo{position:absolute;inset:-60px;width:calc(100% + 120px);height:calc(100% + 120px);max-width:none;
+  object-fit:cover;object-position:60% 40%;filter:blur(15px) saturate(.9) brightness(1.04)}
+
+/* Sand wash: strong behind the text, lighter on the right so the studio shows through */
+.bgC-wash{position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(251,247,240,.94) 0%,rgba(251,247,240,.84) 36%,rgba(247,240,225,.42) 60%,rgba(240,227,213,.16) 100%),
+  linear-gradient(180deg,rgba(212,242,247,.25) 0%,rgba(251,247,240,0) 40%)}
+
+/* Warm light leak from the top right */
+.bgC-leak{position:absolute;inset:0;mix-blend-mode:soft-light;background:
+  radial-gradient(60% 70% at 92% 8%,rgba(250,194,176,.95),rgba(219,161,122,.4) 40%,rgba(219,161,122,0) 70%),
+  radial-gradient(40% 50% at 70% 100%,rgba(201,134,115,.5),rgba(201,134,115,0) 70%)}
+
+/* Bokeh */
+.bgC-b{position:absolute;left:var(--x);top:var(--y);width:var(--s);aspect-ratio:1;border-radius:50%;opacity:var(--o);
+  animation:bgC-float var(--d) ease-in-out infinite alternate}
+.bgC-b.w{background:radial-gradient(circle,rgba(255,255,255,.95) 0%,rgba(255,255,255,.6) 55%,rgba(255,255,255,0) 72%)}
+.bgC-b.c{background:radial-gradient(circle,rgba(253,211,192,.95) 0%,rgba(250,194,176,.55) 55%,rgba(250,194,176,0) 72%)}
+.bgC-b.b{background:radial-gradient(circle,rgba(255,255,255,0) 52%,rgba(253,227,211,.75) 64%,rgba(253,227,211,0) 72%)}
+@keyframes bgC-float{to{transform:translate3d(14px,-22px,0) scale(1.08)}}
+
+/* Melt into the page below: no shapes, just light */
+.bgC-fade{position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(180deg,rgba(251,247,240,0),var(--paper) 88%)}
+
+@media (max-width:860px){
+  .bgC-wash{background:linear-gradient(180deg,rgba(251,247,240,.93) 0%,rgba(251,247,240,.82) 45%,rgba(247,240,225,.5) 70%,rgba(240,227,213,.4) 100%)}
+  .bgC-b:nth-child(n+12){display:none}
+}
+
+/* Final CTA: blurred reception, copper wash, fades into the navy footer */
+.final{background:var(--sand-3);padding-bottom:clamp(110px,14vw,180px)}
+.final .wrap{position:relative;z-index:2}
+.bgC-final .bgC-photo{object-position:50% 50%;filter:blur(20px) saturate(.8) brightness(1.04)}
+.bgC-final .bgC-wash{background:radial-gradient(70% 80% at 50% 42%,rgba(251,247,240,.93),rgba(247,240,225,.7) 60%,rgba(240,227,213,.45) 100%)}
+.bgC-final .bgC-leak{background:radial-gradient(50% 60% at 50% 0,rgba(250,194,176,.9),rgba(250,194,176,0) 70%)}
+.bgC-final .bgC-fade{height:30%;background:linear-gradient(180deg,rgba(6,60,114,0),rgba(6,60,114,.35) 55%,var(--navy) 100%)}

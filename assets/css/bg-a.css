@@ -1,0 +1,70 @@
+/* Background option A: "Pacific Golden Hour"
+   Only the hero and final-CTA backgrounds change. Colors come from the brand palette in site.css. */
+
+.hero{
+  --seaH:clamp(150px,17vw,250px);
+  --sunW:clamp(320px,40vw,560px);
+  --sunR:max(3vw,calc(50% - 640px));
+  background:linear-gradient(180deg,#cfe6f2 0%,#e4eef1 16%,#f7e9df 40%,#f6d9c8 66%,#f3cbb6 84%,#f0c1aa 100%);
+}
+.hero-art .sun,.hero .landscape{display:none}
+
+.bgA{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bgA-glow{position:absolute;inset:0;background:
+  radial-gradient(46% 40% at calc(100% - var(--sunR) - var(--sunW)/2) calc(100% - var(--seaH)),rgba(253,211,192,.95),rgba(250,194,176,.45) 45%,rgba(250,194,176,0) 78%),
+  radial-gradient(80% 60% at calc(100% - var(--sunR) - var(--sunW)/2) 100%,rgba(219,161,122,.22),rgba(219,161,122,0) 70%)}
+
+/* Sunburst, centered on the horizon behind the sun */
+.bgA-rays{position:absolute;width:calc(var(--sunW)*3.2);aspect-ratio:1;
+  right:calc(var(--sunR) - var(--sunW)*1.1);bottom:calc(var(--seaH) - var(--sunW)*1.6);
+  background:repeating-conic-gradient(from 0deg,rgba(201,134,115,.18) 0deg 1.3deg,rgba(201,134,115,0) 1.3deg 7.5deg);
+  -webkit-mask:radial-gradient(closest-side,#000 16%,rgba(0,0,0,.45) 42%,transparent 70%);
+          mask:radial-gradient(closest-side,#000 16%,rgba(0,0,0,.45) 42%,transparent 70%);
+  animation:bgA-spin 180s linear infinite}
+@keyframes bgA-spin{to{transform:rotate(360deg)}}
+
+/* The setting sun: half below the horizon, sinks a little as you scroll (parallax layer) */
+.bgA-sun{position:absolute;width:var(--sunW);aspect-ratio:1;border-radius:50%;
+  right:var(--sunR);bottom:calc(var(--seaH) - var(--sunW)/2);
+  background:radial-gradient(circle at 50% 36%,#fff3ea 0%,#fdd3c0 34%,#f3b9a2 64%,#e3a088 100%);
+  box-shadow:0 0 120px 40px rgba(253,211,192,.55),0 0 260px 120px rgba(250,194,176,.22)}
+
+.bgA-cloud{position:absolute;height:54px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(255,255,255,.85),rgba(255,255,255,0));
+  animation:bgA-float 40s ease-in-out infinite alternate}
+.bgA-cloud.c1{width:440px;top:8%;left:30%}
+.bgA-cloud.c2{width:300px;top:19%;right:1%;animation-duration:48s}
+.bgA-cloud.c3{width:560px;height:64px;bottom:calc(var(--seaH) + 14px);left:-4%;opacity:.7;animation-duration:56s}
+@keyframes bgA-float{to{transform:translateX(70px)}}
+
+.bgA-birds{position:absolute;width:120px;top:11%;right:calc(var(--sunR) + var(--sunW)*.98);opacity:.6;animation:bob 7s ease-in-out infinite}
+
+/* Ocean, waves and shoreline */
+.bgA-sea{position:absolute;left:0;right:0;bottom:-1px;height:var(--seaH);z-index:1}
+.bgA-sea svg{display:block;width:100%;height:100%}
+.bgA-w1{animation:bgA-drift 48s linear infinite}
+.bgA-w2{animation:bgA-drift 34s linear infinite reverse}
+.bgA-w3{animation:bgA-drift 24s linear infinite}
+@keyframes bgA-drift{to{transform:translateX(-720px)}}
+
+/* Sun glint on the water */
+.bgA-glint{position:absolute;z-index:2;width:calc(var(--sunW)*.5);right:calc(var(--sunR) + var(--sunW)*.25);
+  bottom:calc(var(--seaH)*.34);height:calc(var(--seaH)*.62);
+  background:repeating-linear-gradient(180deg,rgba(255,244,236,.95) 0 2px,rgba(255,244,236,0) 2px 9px);
+  -webkit-mask:radial-gradient(50% 100% at 50% 0,#000 15%,transparent 92%);
+          mask:radial-gradient(50% 100% at 50% 0,#000 15%,transparent 92%);
+  animation:bgA-shimmer 4.5s ease-in-out infinite alternate}
+@keyframes bgA-shimmer{to{opacity:.55;transform:scaleX(.8)}}
+
+@media (max-width:860px){
+  .hero{--sunW:min(92vw,440px);--sunR:calc(50% - var(--sunW)/2);--seaH:150px}
+  .bgA-birds{right:auto;left:5%;top:auto;bottom:calc(var(--seaH) + 260px);width:90px}
+  .bgA-cloud.c1{left:auto;right:-20%}
+}
+
+/* Final CTA: same sunset, centered */
+.final{background:linear-gradient(180deg,var(--sand-3) 0%,#f7e9df 30%,#f6d9c8 62%,#f0c1aa 100%)}
+.final .wrap{position:relative;z-index:2}
+.bgA-final{position:relative;height:clamp(180px,20vw,270px);margin-top:clamp(28px,5vw,56px);pointer-events:none;
+  --seaH:56%;--sunW:clamp(200px,24vw,330px);--sunR:calc(50% - var(--sunW)/2)}
+.bgA-final .bgA-glow{background:radial-gradient(40% 70% at 50% 44%,rgba(253,211,192,.9),rgba(253,211,192,0) 75%)}

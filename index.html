@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Home Background Options</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  body{background:var(--sand-3)}
+  .opts{padding:48px 0 72px}
+  .opts h1{font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:10px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
+  .opt{background:#fff;border-radius:var(--r-lg);box-shadow:var(--shadow-md);overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform var(--dur) var(--ease)}
+  .opt:hover{transform:translateY(-4px)}
+  .shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--sand)}
+  .shot iframe{position:absolute;top:0;left:0;width:1440px;height:900px;border:0;transform-origin:0 0;pointer-events:none}
+  .meta{padding:20px 22px 24px}
+  .meta h2{font-size:1.6rem;margin-bottom:6px}
+  .meta p{color:var(--muted);font-size:.92rem;margin:0}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .group{font-size:clamp(1.8rem,3vw,2.4rem);margin:64px 0 6px}
+  @media (max-width:900px){.grid,.grid-2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="opts wrap">
+  <span class="eyebrow">For Roland · Home page</span>
+  <h1>Pick a <em>background</em></h1>
+  <p class="lede">Same page, same brand. Only the hero and the closing "Ready to revive" backgrounds change. Click one to open the full page.</p>
+  <div class="grid">
+    <a class="opt" href="current.html"><div class="shot"><iframe src="current.html" tabindex="-1" title="Current background preview"></iframe></div>
+      <div class="meta"><h2>Current</h2><p>Coastal desert: sky to sand, dunes, palms and agave.</p></div></a>
+    <a class="opt" href="option-a.html"><div class="shot"><iframe src="option-a.html" tabindex="-1" title="Option A preview"></iframe></div>
+      <div class="meta"><h2>A · Pacific Golden Hour</h2><p>A sunset over the ocean: a copper sun that sinks as you scroll, a soft sunburst, drifting waves, light glinting on the water and gulls.</p></div></a>
+    <a class="opt" href="option-b.html"><div class="shot"><iframe src="option-b.html" tabindex="-1" title="Option B preview"></iframe></div>
+      <div class="meta"><h2>B · Mission Arcade &amp; Silk</h2><p>A California mission colonnade with sky through the arches, nested copper arches behind the photos, and flowing silk ribbons on paper grain.</p></div></a>
+  </div>
+  <h2 class="group">A different direction</h2>
+  <p class="lede">No landscapes. One photographic, one graphic.</p>
+  <div class="grid grid-2">
+    <a class="opt" href="option-c.html"><div class="shot"><iframe src="option-c.html" tabindex="-1" title="Option C preview"></iframe></div>
+      <div class="meta"><h2>C · Studio Glow</h2><p>The real studio, softly out of focus behind a sand wash, with floating light spots and a warm light flare. It feels like stepping inside.</p></div></a>
+    <a class="opt" href="option-d.html"><div class="shot"><iframe src="option-d.html" tabindex="-1" title="Option D preview"></iframe></div>
+      <div class="meta"><h2>D · Editorial Signature</h2><p>A fine wallpaper of closed-eye lash motifs, a giant outlined "Revive" in the brand serif, and the logo's copper flourish drawing itself in. A magazine feel.</p></div></a>
+  </div>
+</main>
+<script>
+  const fit=()=>document.querySelectorAll('.shot').forEach(s=>{const f=s.querySelector('iframe');f.style.transform=`scale(${s.clientWidth/1440})`});
+  addEventListener('resize',fit);fit();
+  // Thumbnails: show the hero content right away instead of waiting for its fade-in
+  const reveal=f=>{try{const d=f.contentDocument;if(!d||!d.head||d.getElementById('thumb-css'))return;
+    const s=d.createElement('style');s.id='thumb-css';s.textContent='.rl,.rv{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}';d.head.appendChild(s)}catch(e){}};
+  document.querySelectorAll('.shot iframe').forEach(f=>{f.addEventListener('load',()=>reveal(f));reveal(f)});
+</script>
+</body>
+</html>

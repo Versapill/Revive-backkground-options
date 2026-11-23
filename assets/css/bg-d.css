@@ -1,0 +1,42 @@
+/* Background option D: "Editorial Signature"
+   A fine wallpaper of lash motifs, a giant outlined serif word and a self-drawing copper flourish
+   taken from the logo. Only the hero and final-CTA backgrounds change. */
+
+.hero{background:linear-gradient(180deg,var(--sand-3) 0%,var(--paper) 60%,var(--paper) 100%)}
+.hero-art .sun,.hero .landscape{display:none}
+
+.bgD{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+
+/* Lash wallpaper, cleared behind the headline so it never fights the text */
+.bgD-pattern{position:absolute;inset:0;opacity:.42;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='110' viewBox='0 0 150 110'%3E%3Cpath d='M14 22 Q36 36 58 22M20 27 q-1.0 6 -3.0 10M28 29 q-0.5 6 -1.5 10M36 29 q0.0 6 0.0 10M44 29 q0.5 6 1.5 10M52 27 q1.0 6 3.0 10M89 77 Q111 91 133 77M95 82 q-1.0 6 -3.0 10M103 84 q-0.5 6 -1.5 10M111 84 q0.0 6 0.0 10M119 84 q0.5 6 1.5 10M127 82 q1.0 6 3.0 10' fill='none' stroke='%23c98673' stroke-width='1.1' stroke-linecap='round'/%3E%3C/svg%3E") 0 0/150px 110px;
+  -webkit-mask:radial-gradient(60% 70% at 24% 46%,transparent 35%,#000 78%),linear-gradient(#000 70%,transparent);
+  -webkit-mask-composite:source-in;
+  mask:radial-gradient(60% 70% at 24% 46%,transparent 35%,#000 78%) intersect,linear-gradient(#000 70%,transparent)}
+
+/* Giant outlined word in the brand serif */
+.bgD-word{position:absolute;left:-.04em;bottom:-.3em;font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(9rem,25vw,24rem);line-height:1;letter-spacing:-.02em;white-space:nowrap;color:transparent;
+  -webkit-text-stroke:1.2px rgba(155,91,73,.28);
+  background:linear-gradient(180deg,rgba(250,194,176,.35),rgba(250,194,176,0) 80%);-webkit-background-clip:text;background-clip:text}
+
+/* The logo flourish, drawn in on load */
+.bgD-flourish{position:absolute;width:clamp(560px,58vw,940px);right:-9vw;bottom:clamp(36px,5vw,80px);opacity:.9}
+.bgD-flourish path{stroke-width:1.6;stroke-dasharray:1;stroke-dashoffset:1;
+  animation:bgD-draw 2.6s var(--ease) forwards;animation-delay:calc(.35s + var(--i)*.18s)}
+@keyframes bgD-draw{to{stroke-dashoffset:0}}
+
+/* Thin metallic rule above the proof strip, like a magazine column line */
+.bgD-rule{position:absolute;left:var(--gutter);right:var(--gutter);bottom:clamp(96px,10vw,130px);height:1px;background:var(--metal);opacity:.7}
+
+@media (max-width:860px){
+  .bgD-pattern{-webkit-mask:linear-gradient(180deg,transparent 0%,transparent 42%,#000 70%,transparent 100%);mask:linear-gradient(180deg,transparent 0%,transparent 42%,#000 70%,transparent 100%)}
+  .bgD-flourish{width:150vw;right:-40vw;top:auto;bottom:calc(var(--gutter) + 380px);opacity:.6}
+  .bgD-word{font-size:34vw}
+}
+
+/* Final CTA */
+.final{background:linear-gradient(180deg,var(--sand-3) 0%,#f4e0d4 60%,#ecc9b7 100%);padding-bottom:clamp(110px,14vw,170px)}
+.final .wrap{position:relative;z-index:2}
+.bgD-final .bgD-pattern{opacity:.35;-webkit-mask:radial-gradient(48% 60% at 50% 45%,transparent 40%,#000 85%);mask:radial-gradient(48% 60% at 50% 45%,transparent 40%,#000 85%)}
+.bgD-final .bgD-word{left:50%;bottom:auto;top:50%;transform:translate(-50%,-56%);font-size:clamp(10rem,30vw,28rem)}
+.bgD-final .bgD-flourish{width:clamp(320px,38vw,560px);right:auto;left:calc(50% - clamp(320px,38vw,560px)/2);top:auto;bottom:clamp(18px,3vw,40px);opacity:.9}
