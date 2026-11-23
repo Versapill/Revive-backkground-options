@@ -1,0 +1,57 @@
+/* Background option F: "Evening"
+   Deep brand navy, a warm copper glow behind the photos, fine metallic arch lines with a
+   slow travelling glint. The hero and closing text switch to light colors to sit on the dark.
+   Only the hero and final-CTA backgrounds (and the text colors on them) change. */
+
+.hero{background:
+  radial-gradient(60% 80% at 74% 44%,#0b4b88 0%,rgba(11,75,136,0) 70%),
+  radial-gradient(90% 70% at 0% 0%,rgba(162,193,214,.14),rgba(162,193,214,0) 60%),
+  linear-gradient(180deg,#05345f 0%,var(--navy-deep) 70%,#03213f 100%)}
+.hero-art .sun,.hero .landscape{display:none}
+
+/* Text on the dark */
+.hero h1,.final h2{color:var(--paper)}
+.hero h1 em,.final h2 em{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.hero .eyebrow,.final .eyebrow{color:#f2bda7}
+.hero .lede,.final .lede{color:rgba(251,247,240,.78)}
+.hero .btn-ghost,.final .btn-ghost{color:var(--paper);border-color:rgba(251,247,240,.32);background:rgba(255,255,255,.06)}
+.hero .btn-ghost:hover,.final .btn-ghost:hover{color:#fdd3c0;border-color:#fdd3c0}
+.hero .btn-primary,.final .btn-primary{box-shadow:0 12px 30px -10px rgba(201,134,115,.7)}
+.hero .rating-chip{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);color:var(--paper);box-shadow:none}
+.hero .rating-chip .g-badge{box-shadow:none}
+
+.bgF{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+
+/* Warm copper light behind the photos */
+.bgF-glow{position:absolute;width:clamp(520px,60vw,900px);aspect-ratio:1;border-radius:50%;
+  left:calc(50% + clamp(40px,22vw,330px) - clamp(520px,60vw,900px)/2);top:50%;margin-top:calc(clamp(520px,60vw,900px)/-2);
+  background:radial-gradient(closest-side,rgba(219,161,122,.5),rgba(201,134,115,.22) 45%,rgba(201,134,115,0));
+  animation:bgF-pulse 10s ease-in-out infinite alternate}
+@keyframes bgF-pulse{from{opacity:.8;transform:scale(.96)}to{opacity:1;transform:scale(1.04)}}
+
+/* Fine metallic arches framing the photos */
+.bgF-arches{--aw:clamp(460px,46vw,720px);position:absolute;bottom:0;width:var(--aw);height:calc(var(--aw)*1.125);
+  left:calc(50% + clamp(40px,22vw,330px) - var(--aw)/2)}
+.bgF-glint{stroke:#fff6ef;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:.05 .95;stroke-dashoffset:.05;opacity:0;
+  filter:drop-shadow(0 0 4px rgba(253,211,192,.9));
+  animation:bgF-travel 9s cubic-bezier(.45,0,.55,1) infinite;animation-delay:calc(1.2s + var(--i)*2.6s)}
+@keyframes bgF-travel{0%{stroke-dashoffset:.05;opacity:0}8%{opacity:1}88%{opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
+
+.bgF-grain{position:absolute;inset:0;opacity:.5;mix-blend-mode:soft-light;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .22 0 0 0 0 .18 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0/260px}
+
+/* Metallic hairline where the dark meets the page */
+.bgF-rule{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--metal);opacity:.8}
+
+@media (max-width:860px){
+  .bgF-glow{left:calc(50% - clamp(520px,60vw,900px)/2);top:auto;bottom:-10%;margin-top:0}
+  .bgF-arches{--aw:min(118vw,560px);left:calc(50% - var(--aw)/2)}
+}
+
+/* Final CTA: the evening continues straight into the navy footer */
+.final{padding-bottom:clamp(100px,12vw,160px);background:
+  radial-gradient(60% 70% at 50% 30%,#0b4b88 0%,rgba(11,75,136,0) 70%),
+  linear-gradient(180deg,var(--navy-deep) 0%,#05345f 60%,var(--navy) 100%)}
+.final .wrap{position:relative;z-index:2}
+.bgF-final .bgF-glow{left:calc(50% - clamp(520px,60vw,900px)/2);top:-20%;margin-top:0;opacity:.85}
+.bgF-final .bgF-arches{--aw:clamp(520px,54vw,860px);left:calc(50% - var(--aw)/2)}
+@media (max-width:860px){.bgF-final .bgF-arches{--aw:min(130vw,600px)}}
