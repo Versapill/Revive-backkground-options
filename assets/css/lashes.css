@@ -1,38 +1,52 @@
-/* Large lash-strand elements (after the logo's lash wing and the brand stationery).
-   They sit in 4 of the 10 home page sections, never wider than ~46% of the page,
-   with a slow drift and a soft highlight that slides along the strands. */
+/* Large lash elements (after the logo's lash wing and the brand stationery).
+   Three shapes: flowing ribbons, a lash line ("fan") and the logo's wing drawn big.
+   Light sections: embossed tone on tone, like letterpress. Dark sections: metallic copper.
+   They sit in 4 of the 10 home page sections, each no wider than ~46% of the page,
+   with a slow drift and a soft highlight sliding along them. */
 
 .has-lash{position:relative;overflow:clip}
 .has-lash>.wrap{position:relative;z-index:2}
 
-.lashwrap{position:absolute;z-index:1;pointer-events:none;width:var(--lw,44vw);max-width:820px}
+.lashwrap{position:absolute;z-index:1;pointer-events:none;width:var(--lw,44vw);max-width:860px}
 .lashwrap svg{display:block;width:100%;height:auto;overflow:visible;
   animation:lash-drift 16s ease-in-out infinite alternate;transform-origin:30% 80%}
 @keyframes lash-drift{from{transform:translate3d(0,0,0) rotate(0deg)}to{transform:translate3d(-12px,-14px,0) rotate(-1.6deg)}}
+.lashwrap:nth-of-type(even) svg{animation-duration:20s;animation-direction:alternate-reverse}
 
-/* Light sections: copper, tone on tone */
-.lw-light .lashdeco-main{opacity:.3}
-.lw-light .lashdeco-shadow{opacity:.06}
-/* Dark sections: metallic copper glowing softly on navy */
-.lw-dark .lashdeco-main{opacity:.6}
-.lw-dark .lashdeco-shadow{opacity:.35}
-.lw-dark svg{mix-blend-mode:screen}
+/* Embossed (light) */
+.lw-light .lashdeco-main{opacity:.2}
+.lw-light .lashdeco-hl{opacity:.85}
+.lw-light .lashdeco-shadow{opacity:.12}
+/* Metallic (dark) */
+.lw-dark .lashdeco-main{opacity:.78}
+.lw-dark .lashdeco-shadow{opacity:.45}
 
-/* Placement, top to bottom */
-.lw-hero{--lw:42vw;left:-8vw;bottom:-19%}
-/* On the current page the strands sweep over the dunes instead of hiding behind them */
-.lw-hero.lw-light{--lw:40vw;left:-6vw;bottom:-6%;z-index:2}
-.lw-hero.lw-light .lashdeco-main{opacity:.38}
+/* ---- Current page ---- */
+/* Logo mark embossed into the sky, top-left, well above the beach */
+.lw-hero-wing{--lw:46vw;left:-5vw;top:-3%}
+.lw-hero-wing .lashdeco-main{opacity:.16}
+
+/* ---- Dark page hero ---- */
+.lw-hero-rib{--lw:42vw;left:-8vw;bottom:-19%}
+.lw-hero-wing-d{--lw:30vw;right:-1vw;top:-6%}
+.lw-hero-wing-d .lashdeco-main{opacity:.55}
+
+/* ---- Both pages ---- */
 .lw-services{--lw:38vw;left:-8vw;bottom:-4%}
-.lw-reviews{--lw:40vw;right:-8vw;top:4%}
-.lw-final{--lw:44vw;left:-8vw;bottom:-6%}
-.lw-final svg{transform-origin:70% 80%}
+.lw-reviews{--lw:40vw;right:-10vw;top:2%}
+/* A pair of lash lines framing the closing headline, like closed eyes */
+.lw-final-l,.lw-final-r{--lw:30vw;top:clamp(40px,7vw,110px)}
+.lw-final-l{left:-4vw}
+.lw-final-r{right:-4vw}
+.lw-final-l svg{transform-origin:70% 80%}
 
 @media (max-width:860px){
-  .lw-hero,.lw-hero.lw-light{--lw:80vw;left:-26vw;bottom:-6%}
+  .lw-hero-wing{--lw:110vw;left:-30vw;top:-1%}
+  .lw-hero-rib{--lw:80vw;left:-26vw;bottom:-6%}
+  .lw-hero-wing-d{--lw:86vw;right:-6vw;top:-1%}
   .lw-services{--lw:64vw;left:-24vw}
-  .lw-reviews{--lw:64vw;right:-24vw}
-  .lw-final{--lw:72vw;left:-24vw}
-  .lw-light .lashdeco-main{opacity:.22}
+  .lw-reviews{--lw:70vw;right:-28vw}
+  .lw-final-l,.lw-final-r{--lw:46vw;top:14px}
+  .lw-final-l{left:-14vw}
+  .lw-final-r{right:-14vw}
 }
-.lw-final.lw-dark .lashdeco-main{opacity:.42}
