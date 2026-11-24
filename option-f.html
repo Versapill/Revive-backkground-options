@@ -114,32 +114,42 @@
 <main id="main">
 <!-- HERO -->
 <section class="has-lash hero" id="top">
-  <div class="lashwrap lw-hero-wing-d lw-dark" aria-hidden="true"><svg class="lashdeco ld-wing" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+  <div class="lashwrap lw-hero lw-dark" aria-hidden="true"><svg class="lashdeco" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
       <defs>
-        <linearGradient id="lash1-g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1400" y2="-300">
-          <stop offset="0" stop-color="#e9ab8e"/><stop offset=".42" stop-color="#e9ab8e"/>
-          <stop offset=".5" stop-color="#fff0e6"/><stop offset=".58" stop-color="#e9ab8e"/><stop offset="1" stop-color="#e9ab8e"/>
-          <animateTransform attributeName="gradientTransform" type="translate" from="-1400 300" to="1100 -240" dur="11s" repeatCount="indefinite"/>
+        <filter id="lash0-e" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="bump"/>
+          <feSpecularLighting in="bump" surfaceScale="6" specularConstant="0.45" specularExponent="16" lighting-color="#fff" result="spec">
+            <feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
+          <feComposite in="spec" in2="SourceAlpha" operator="in" result="hiLight"/>
+          <feDiffuseLighting in="bump" surfaceScale="6" diffuseConstant="1" lighting-color="#fff" result="diff">
+            <feDistantLight azimuth="235" elevation="38"/></feDiffuseLighting>
+          <feColorMatrix in="diff" type="matrix" values="0 0 0 0 0.000  0 0 0 0 0.039  0 0 0 0 0.094  -1.87 0 0 0 1.12" result="shadeA"/>
+          <feComposite in="shadeA" in2="SourceAlpha" operator="in" result="inner"/>
+          <feOffset in="bump" dx="5" dy="8" result="off"/>
+          <feFlood flood-color="#000a18" flood-opacity="0.32"/>
+          <feComposite in2="off" operator="in"/>
+          <feComposite in2="SourceAlpha" operator="out" result="outer"/>
+          <feMerge><feMergeNode in="outer"/><feMergeNode in="inner"/><feMergeNode in="hiLight"/></feMerge>
+        </filter>
+        <linearGradient id="lash0-foil" gradientUnits="userSpaceOnUse" x1="1000" y1="0" x2="480" y2="260">
+          <stop offset="0" stop-color="#b8735e"/><stop offset=".22" stop-color="#fdd3c0"/><stop offset=".38" stop-color="#d79a80"/>
+          <stop offset=".55" stop-color="#fbe2d3"/><stop offset=".75" stop-color="#c98673"/><stop offset="1" stop-color="#e7b29b"/>
         </linearGradient>
-      </defs>
-      <g>
-        <g class="lashdeco-shadow" fill="#021a35" transform="translate(3 5)"><path d="M460.0 500.0 C320.0 340.0 20.0 330.0 30.0 500.0 C20.0 300.0 320.0 310.0 460.0 500.0Z"/><path d="M30.0 500.0 C40.0 690.0 320.0 680.0 460.0 500.0 C320.0 702.0 40.0 712.0 30.0 500.0Z"/><path d="M460.0 500.0 C620.0 400.0 830.0 340.0 1000.0 390.0 C838.0 379.2 628.0 439.2 460.0 500.0Z"/><path d="M500.0 470.0 C545.5 235.1 734.9 144.2 886.4 250.3 C740.2 153.6 550.8 244.6 500.0 470.0Z"/><path d="M534.5 461.7 C582.4 214.4 781.8 118.7 941.4 230.3 C787.6 128.8 588.2 224.5 534.5 461.7Z"/><path d="M569.1 454.0 C619.3 194.9 828.3 94.5 995.5 211.6 C834.5 105.4 625.4 205.7 569.1 454.0Z"/><path d="M603.6 447.1 C655.9 177.0 873.7 72.4 1048.0 194.4 C880.3 84.0 662.5 188.5 603.6 447.1Z"/><path d="M638.2 440.7 C689.6 174.8 904.1 71.9 1075.6 192.0 C911.0 84.0 696.5 186.9 638.2 440.7Z"/><path d="M672.7 435.1 C722.0 180.6 927.2 82.0 1091.4 197.0 C933.7 93.4 728.4 191.9 672.7 435.1Z"/><path d="M707.3 430.1 C754.2 187.7 949.7 93.9 1106.0 203.3 C955.7 104.5 760.2 198.3 707.3 430.1Z"/><path d="M741.8 425.7 C786.3 196.0 971.6 107.0 1119.9 210.8 C977.3 116.9 791.9 205.9 741.8 425.7Z"/><path d="M776.4 422.1 C818.3 205.2 993.2 121.3 1133.1 219.2 C998.4 130.5 823.6 214.4 776.4 422.1Z"/><path d="M810.9 419.0 C850.3 215.4 1014.5 136.6 1145.9 228.6 C1019.4 145.1 855.2 223.9 810.9 419.0Z"/><path d="M845.5 416.7 C882.3 226.5 1035.6 152.9 1158.3 238.8 C1040.0 160.7 886.7 234.3 845.5 416.7Z"/><path d="M880.0 415.0 C914.2 238.5 1056.5 170.2 1170.3 249.9 C1060.5 177.3 918.2 245.6 880.0 415.0Z"/></g>
-        
-        <g class="lashdeco-main" fill="url(#lash1-g)"><path d="M460.0 500.0 C320.0 340.0 20.0 330.0 30.0 500.0 C20.0 300.0 320.0 310.0 460.0 500.0Z"/><path d="M30.0 500.0 C40.0 690.0 320.0 680.0 460.0 500.0 C320.0 702.0 40.0 712.0 30.0 500.0Z"/><path d="M460.0 500.0 C620.0 400.0 830.0 340.0 1000.0 390.0 C838.0 379.2 628.0 439.2 460.0 500.0Z"/><path d="M500.0 470.0 C545.5 235.1 734.9 144.2 886.4 250.3 C740.2 153.6 550.8 244.6 500.0 470.0Z"/><path d="M534.5 461.7 C582.4 214.4 781.8 118.7 941.4 230.3 C787.6 128.8 588.2 224.5 534.5 461.7Z"/><path d="M569.1 454.0 C619.3 194.9 828.3 94.5 995.5 211.6 C834.5 105.4 625.4 205.7 569.1 454.0Z"/><path d="M603.6 447.1 C655.9 177.0 873.7 72.4 1048.0 194.4 C880.3 84.0 662.5 188.5 603.6 447.1Z"/><path d="M638.2 440.7 C689.6 174.8 904.1 71.9 1075.6 192.0 C911.0 84.0 696.5 186.9 638.2 440.7Z"/><path d="M672.7 435.1 C722.0 180.6 927.2 82.0 1091.4 197.0 C933.7 93.4 728.4 191.9 672.7 435.1Z"/><path d="M707.3 430.1 C754.2 187.7 949.7 93.9 1106.0 203.3 C955.7 104.5 760.2 198.3 707.3 430.1Z"/><path d="M741.8 425.7 C786.3 196.0 971.6 107.0 1119.9 210.8 C977.3 116.9 791.9 205.9 741.8 425.7Z"/><path d="M776.4 422.1 C818.3 205.2 993.2 121.3 1133.1 219.2 C998.4 130.5 823.6 214.4 776.4 422.1Z"/><path d="M810.9 419.0 C850.3 215.4 1014.5 136.6 1145.9 228.6 C1019.4 145.1 855.2 223.9 810.9 419.0Z"/><path d="M845.5 416.7 C882.3 226.5 1035.6 152.9 1158.3 238.8 C1040.0 160.7 886.7 234.3 845.5 416.7Z"/><path d="M880.0 415.0 C914.2 238.5 1056.5 170.2 1170.3 249.9 C1060.5 177.3 918.2 245.6 880.0 415.0Z"/></g>
-      </g>
-    </svg></div>
-  <div class="lashwrap lw-hero-rib lw-dark" aria-hidden="true"><svg class="lashdeco ld-ribbons" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="lash0-g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1400" y2="-300">
-          <stop offset="0" stop-color="#e9ab8e"/><stop offset=".42" stop-color="#e9ab8e"/>
-          <stop offset=".5" stop-color="#fff0e6"/><stop offset=".58" stop-color="#e9ab8e"/><stop offset="1" stop-color="#e9ab8e"/>
-          <animateTransform attributeName="gradientTransform" type="translate" from="-1400 300" to="1100 -240" dur="11s" repeatCount="indefinite"/>
+        <linearGradient id="lash0-ff" gradientUnits="userSpaceOnUse" x1="1000" y1="0" x2="440" y2="200">
+          <stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
         </linearGradient>
+        <mask id="lash0-fm" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash0-ff)"/></mask>
+        <radialGradient id="lash0-fade" gradientUnits="userSpaceOnUse" cx="1000" cy="0" r="980">
+          <stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#fff"/><stop offset=".97" stop-color="#fff" stop-opacity="0"/>
+        </radialGradient>
+        <mask id="lash0-m" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash0-fade)"/></mask>
       </defs>
-      <g>
-        <g class="lashdeco-shadow" fill="#021a35" transform="translate(3 5)"><path d="M-80.0 760.0 C300.0 300.0 600.0 760.0 1080.0 120.0 C607.2 773.1 307.2 313.1 -80.0 760.0Z"/><path d="M-66.2 731.5 C316.1 267.8 606.9 709.4 896.6 218.2 C618.5 731.2 327.7 289.6 -66.2 731.5Z"/><path d="M-52.4 703.0 C332.2 235.6 613.8 658.8 989.4 114.0 C626.5 681.2 344.9 258.0 -52.4 703.0Z"/><path d="M-38.6 674.4 C348.3 203.4 620.7 608.2 1080.0 20.0 C633.2 629.5 360.8 224.7 -38.6 674.4Z"/><path d="M-24.8 645.9 C364.4 171.2 627.6 557.6 903.2 129.9 C638.3 576.9 375.1 190.5 -24.8 645.9Z"/><path d="M-11.0 617.4 C380.5 139.0 634.5 507.0 992.7 62.5 C650.4 535.7 396.4 167.7 -11.0 617.4Z"/><path d="M2.8 588.9 C396.6 106.8 641.4 456.4 1080.0 -50.0 C655.7 480.5 410.9 130.9 2.8 588.9Z"/><path d="M16.6 560.4 C412.7 74.6 648.3 405.8 909.9 28.2 C659.9 425.4 424.3 94.2 16.6 560.4Z"/><path d="M30.4 531.8 C428.8 42.4 655.2 355.2 996.0 -12.7 C663.9 370.6 437.5 57.8 30.4 531.8Z"/><path d="M44.2 503.3 C444.9 10.2 662.1 304.6 1080.0 -97.4 C672.1 321.8 454.9 27.4 44.2 503.3Z"/></g>
-        
-        <g class="lashdeco-main" fill="url(#lash0-g)"><path d="M-80.0 760.0 C300.0 300.0 600.0 760.0 1080.0 120.0 C607.2 773.1 307.2 313.1 -80.0 760.0Z"/><path d="M-66.2 731.5 C316.1 267.8 606.9 709.4 896.6 218.2 C618.5 731.2 327.7 289.6 -66.2 731.5Z"/><path d="M-52.4 703.0 C332.2 235.6 613.8 658.8 989.4 114.0 C626.5 681.2 344.9 258.0 -52.4 703.0Z"/><path d="M-38.6 674.4 C348.3 203.4 620.7 608.2 1080.0 20.0 C633.2 629.5 360.8 224.7 -38.6 674.4Z"/><path d="M-24.8 645.9 C364.4 171.2 627.6 557.6 903.2 129.9 C638.3 576.9 375.1 190.5 -24.8 645.9Z"/><path d="M-11.0 617.4 C380.5 139.0 634.5 507.0 992.7 62.5 C650.4 535.7 396.4 167.7 -11.0 617.4Z"/><path d="M2.8 588.9 C396.6 106.8 641.4 456.4 1080.0 -50.0 C655.7 480.5 410.9 130.9 2.8 588.9Z"/><path d="M16.6 560.4 C412.7 74.6 648.3 405.8 909.9 28.2 C659.9 425.4 424.3 94.2 16.6 560.4Z"/><path d="M30.4 531.8 C428.8 42.4 655.2 355.2 996.0 -12.7 C663.9 370.6 437.5 57.8 30.4 531.8Z"/><path d="M44.2 503.3 C444.9 10.2 662.1 304.6 1080.0 -97.4 C672.1 321.8 454.9 27.4 44.2 503.3Z"/></g>
+      <g mask="url(#lash0-m)">
+        <g class="lashdeco-emboss" fill="#000" filter="url(#lash0-e)"><path d="M-120.0 70.0 C440.0 160.0 740.0 -40.0 1120.0 -30.0 C744.0 9.8 444.0 209.8 -120.0 70.0Z"/><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 304.0 C440.0 340.0 740.0 128.0 1120.0 126.0 C745.9 169.3 445.9 381.3 -120.0 304.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/><path d="M-120.0 460.0 C440.0 460.0 740.0 240.0 1120.0 230.0 C749.6 291.7 449.6 511.7 -120.0 460.0Z"/><path d="M-120.0 538.0 C440.0 520.0 740.0 296.0 1120.0 282.0 C752.5 356.7 452.5 580.7 -120.0 538.0Z"/><path d="M-120.0 616.0 C440.0 580.0 740.0 352.0 1120.0 334.0 C751.9 404.5 451.9 632.5 -120.0 616.0Z"/><path d="M-120.0 694.0 C440.0 640.0 740.0 408.0 1120.0 386.0 C749.7 446.9 449.7 678.9 -120.0 694.0Z"/></g>
+        <g class="lashdeco-foil" mask="url(#lash0-fm)">
+          <g fill="url(#lash0-foil)"><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/></g>
+          <g fill="#000" filter="url(#lash0-e)" opacity=".7"><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/></g>
+        </g>
       </g>
     </svg></div>
   <div class="wrap hero-grid">
@@ -189,18 +199,42 @@
 
 <!-- SERVICES -->
 <section class="has-lash sec services" id="services">
-  <div class="lashwrap lw-services lw-light" aria-hidden="true"><svg class="lashdeco ld-ribbons" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+  <div class="lashwrap lw-services lw-light" aria-hidden="true"><svg class="lashdeco" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
       <defs>
-        <linearGradient id="lash2-g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1400" y2="-300">
-          <stop offset="0" stop-color="#c98673"/><stop offset=".42" stop-color="#c98673"/>
-          <stop offset=".5" stop-color="#fff6ef"/><stop offset=".58" stop-color="#c98673"/><stop offset="1" stop-color="#c98673"/>
-          <animateTransform attributeName="gradientTransform" type="translate" from="-1400 300" to="1100 -240" dur="11s" repeatCount="indefinite"/>
+        <filter id="lash1-e" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="bump"/>
+          <feSpecularLighting in="bump" surfaceScale="6" specularConstant="0.90" specularExponent="16" lighting-color="#fff" result="spec">
+            <feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
+          <feComposite in="spec" in2="SourceAlpha" operator="in" result="hiLight"/>
+          <feDiffuseLighting in="bump" surfaceScale="6" diffuseConstant="1" lighting-color="#fff" result="diff">
+            <feDistantLight azimuth="235" elevation="38"/></feDiffuseLighting>
+          <feColorMatrix in="diff" type="matrix" values="0 0 0 0 0.541  0 0 0 0 0.353  0 0 0 0 0.282  -1.10 0 0 0 0.66" result="shadeA"/>
+          <feComposite in="shadeA" in2="SourceAlpha" operator="in" result="inner"/>
+          <feOffset in="bump" dx="5" dy="8" result="off"/>
+          <feFlood flood-color="#8a5a48" flood-opacity="0.09"/>
+          <feComposite in2="off" operator="in"/>
+          <feComposite in2="SourceAlpha" operator="out" result="outer"/>
+          <feMerge><feMergeNode in="outer"/><feMergeNode in="inner"/><feMergeNode in="hiLight"/></feMerge>
+        </filter>
+        <linearGradient id="lash1-foil" gradientUnits="userSpaceOnUse" x1="0" y1="600" x2="520" y2="340">
+          <stop offset="0" stop-color="#b8735e"/><stop offset=".22" stop-color="#fdd3c0"/><stop offset=".38" stop-color="#d79a80"/>
+          <stop offset=".55" stop-color="#fbe2d3"/><stop offset=".75" stop-color="#c98673"/><stop offset="1" stop-color="#e7b29b"/>
         </linearGradient>
+        <linearGradient id="lash1-ff" gradientUnits="userSpaceOnUse" x1="0" y1="600" x2="560" y2="400">
+          <stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <mask id="lash1-fm" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash1-ff)"/></mask>
+        <radialGradient id="lash1-fade" gradientUnits="userSpaceOnUse" cx="0" cy="600" r="980">
+          <stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#fff"/><stop offset=".97" stop-color="#fff" stop-opacity="0"/>
+        </radialGradient>
+        <mask id="lash1-m" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash1-fade)"/></mask>
       </defs>
-      <g transform="translate(1000 0) scale(-1 1)">
-        <g class="lashdeco-shadow" fill="#9b5b49" transform="translate(3 5)"><path d="M-80.0 760.0 C300.0 300.0 600.0 760.0 1080.0 120.0 C607.2 773.1 307.2 313.1 -80.0 760.0Z"/><path d="M-66.2 731.5 C316.1 267.8 606.9 709.4 896.6 218.2 C618.5 731.2 327.7 289.6 -66.2 731.5Z"/><path d="M-52.4 703.0 C332.2 235.6 613.8 658.8 989.4 114.0 C626.5 681.2 344.9 258.0 -52.4 703.0Z"/><path d="M-38.6 674.4 C348.3 203.4 620.7 608.2 1080.0 20.0 C633.2 629.5 360.8 224.7 -38.6 674.4Z"/><path d="M-24.8 645.9 C364.4 171.2 627.6 557.6 903.2 129.9 C638.3 576.9 375.1 190.5 -24.8 645.9Z"/><path d="M-11.0 617.4 C380.5 139.0 634.5 507.0 992.7 62.5 C650.4 535.7 396.4 167.7 -11.0 617.4Z"/><path d="M2.8 588.9 C396.6 106.8 641.4 456.4 1080.0 -50.0 C655.7 480.5 410.9 130.9 2.8 588.9Z"/><path d="M16.6 560.4 C412.7 74.6 648.3 405.8 909.9 28.2 C659.9 425.4 424.3 94.2 16.6 560.4Z"/><path d="M30.4 531.8 C428.8 42.4 655.2 355.2 996.0 -12.7 C663.9 370.6 437.5 57.8 30.4 531.8Z"/><path d="M44.2 503.3 C444.9 10.2 662.1 304.6 1080.0 -97.4 C672.1 321.8 454.9 27.4 44.2 503.3Z"/></g>
-        <g class="lashdeco-hl" fill="#fff" transform="translate(-2 -2)"><path d="M-80.0 760.0 C300.0 300.0 600.0 760.0 1080.0 120.0 C607.2 773.1 307.2 313.1 -80.0 760.0Z"/><path d="M-66.2 731.5 C316.1 267.8 606.9 709.4 896.6 218.2 C618.5 731.2 327.7 289.6 -66.2 731.5Z"/><path d="M-52.4 703.0 C332.2 235.6 613.8 658.8 989.4 114.0 C626.5 681.2 344.9 258.0 -52.4 703.0Z"/><path d="M-38.6 674.4 C348.3 203.4 620.7 608.2 1080.0 20.0 C633.2 629.5 360.8 224.7 -38.6 674.4Z"/><path d="M-24.8 645.9 C364.4 171.2 627.6 557.6 903.2 129.9 C638.3 576.9 375.1 190.5 -24.8 645.9Z"/><path d="M-11.0 617.4 C380.5 139.0 634.5 507.0 992.7 62.5 C650.4 535.7 396.4 167.7 -11.0 617.4Z"/><path d="M2.8 588.9 C396.6 106.8 641.4 456.4 1080.0 -50.0 C655.7 480.5 410.9 130.9 2.8 588.9Z"/><path d="M16.6 560.4 C412.7 74.6 648.3 405.8 909.9 28.2 C659.9 425.4 424.3 94.2 16.6 560.4Z"/><path d="M30.4 531.8 C428.8 42.4 655.2 355.2 996.0 -12.7 C663.9 370.6 437.5 57.8 30.4 531.8Z"/><path d="M44.2 503.3 C444.9 10.2 662.1 304.6 1080.0 -97.4 C672.1 321.8 454.9 27.4 44.2 503.3Z"/></g>
-        <g class="lashdeco-main" fill="url(#lash2-g)"><path d="M-80.0 760.0 C300.0 300.0 600.0 760.0 1080.0 120.0 C607.2 773.1 307.2 313.1 -80.0 760.0Z"/><path d="M-66.2 731.5 C316.1 267.8 606.9 709.4 896.6 218.2 C618.5 731.2 327.7 289.6 -66.2 731.5Z"/><path d="M-52.4 703.0 C332.2 235.6 613.8 658.8 989.4 114.0 C626.5 681.2 344.9 258.0 -52.4 703.0Z"/><path d="M-38.6 674.4 C348.3 203.4 620.7 608.2 1080.0 20.0 C633.2 629.5 360.8 224.7 -38.6 674.4Z"/><path d="M-24.8 645.9 C364.4 171.2 627.6 557.6 903.2 129.9 C638.3 576.9 375.1 190.5 -24.8 645.9Z"/><path d="M-11.0 617.4 C380.5 139.0 634.5 507.0 992.7 62.5 C650.4 535.7 396.4 167.7 -11.0 617.4Z"/><path d="M2.8 588.9 C396.6 106.8 641.4 456.4 1080.0 -50.0 C655.7 480.5 410.9 130.9 2.8 588.9Z"/><path d="M16.6 560.4 C412.7 74.6 648.3 405.8 909.9 28.2 C659.9 425.4 424.3 94.2 16.6 560.4Z"/><path d="M30.4 531.8 C428.8 42.4 655.2 355.2 996.0 -12.7 C663.9 370.6 437.5 57.8 30.4 531.8Z"/><path d="M44.2 503.3 C444.9 10.2 662.1 304.6 1080.0 -97.4 C672.1 321.8 454.9 27.4 44.2 503.3Z"/></g>
+      <g mask="url(#lash1-m)">
+        <g class="lashdeco-emboss" fill="#000" filter="url(#lash1-e)"><path d="M1120.0 520.0 C640.0 300.0 300.0 640.0 -120.0 420.0 C304.2 588.2 644.2 248.2 1120.0 520.0Z"/><path d="M1120.0 438.0 C640.0 236.0 300.0 570.0 -120.0 356.0 C304.1 508.2 644.1 174.2 1120.0 438.0Z"/><path d="M1120.0 356.0 C640.0 172.0 300.0 500.0 -120.0 292.0 C302.5 450.6 642.5 122.6 1120.0 356.0Z"/><path d="M1120.0 274.0 C640.0 108.0 300.0 430.0 -120.0 228.0 C301.6 387.3 641.6 65.3 1120.0 274.0Z"/><path d="M1120.0 192.0 C640.0 44.0 300.0 360.0 -120.0 164.0 C301.3 303.1 641.3 -12.9 1120.0 192.0Z"/><path d="M1120.0 110.0 C640.0 -20.0 300.0 290.0 -120.0 100.0 C300.5 230.0 640.5 -80.0 1120.0 110.0Z"/></g>
+        <g class="lashdeco-foil" mask="url(#lash1-fm)">
+          <g fill="url(#lash1-foil)"><path d="M1120.0 438.0 C640.0 236.0 300.0 570.0 -120.0 356.0 C304.1 508.2 644.1 174.2 1120.0 438.0Z"/><path d="M1120.0 274.0 C640.0 108.0 300.0 430.0 -120.0 228.0 C301.6 387.3 641.6 65.3 1120.0 274.0Z"/></g>
+          <g fill="#000" filter="url(#lash1-e)" opacity=".7"><path d="M1120.0 438.0 C640.0 236.0 300.0 570.0 -120.0 356.0 C304.1 508.2 644.1 174.2 1120.0 438.0Z"/><path d="M1120.0 274.0 C640.0 108.0 300.0 430.0 -120.0 228.0 C301.6 387.3 641.6 65.3 1120.0 274.0Z"/></g>
+        </g>
       </g>
     </svg></div>
   <div class="wrap">
@@ -447,18 +481,42 @@
 
 <!-- REVIEWS -->
 <section class="has-lash sec reviews" id="reviews">
-  <div class="lashwrap lw-reviews lw-light" aria-hidden="true"><svg class="lashdeco ld-fan" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+  <div class="lashwrap lw-reviews lw-light" aria-hidden="true"><svg class="lashdeco" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
       <defs>
-        <linearGradient id="lash3-g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1400" y2="-300">
-          <stop offset="0" stop-color="#c98673"/><stop offset=".42" stop-color="#c98673"/>
-          <stop offset=".5" stop-color="#fff6ef"/><stop offset=".58" stop-color="#c98673"/><stop offset="1" stop-color="#c98673"/>
-          <animateTransform attributeName="gradientTransform" type="translate" from="-1400 300" to="1100 -240" dur="11s" repeatCount="indefinite"/>
+        <filter id="lash2-e" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="bump"/>
+          <feSpecularLighting in="bump" surfaceScale="6" specularConstant="0.90" specularExponent="16" lighting-color="#fff" result="spec">
+            <feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
+          <feComposite in="spec" in2="SourceAlpha" operator="in" result="hiLight"/>
+          <feDiffuseLighting in="bump" surfaceScale="6" diffuseConstant="1" lighting-color="#fff" result="diff">
+            <feDistantLight azimuth="235" elevation="38"/></feDiffuseLighting>
+          <feColorMatrix in="diff" type="matrix" values="0 0 0 0 0.541  0 0 0 0 0.353  0 0 0 0 0.282  -1.10 0 0 0 0.66" result="shadeA"/>
+          <feComposite in="shadeA" in2="SourceAlpha" operator="in" result="inner"/>
+          <feOffset in="bump" dx="5" dy="8" result="off"/>
+          <feFlood flood-color="#8a5a48" flood-opacity="0.09"/>
+          <feComposite in2="off" operator="in"/>
+          <feComposite in2="SourceAlpha" operator="out" result="outer"/>
+          <feMerge><feMergeNode in="outer"/><feMergeNode in="inner"/><feMergeNode in="hiLight"/></feMerge>
+        </filter>
+        <linearGradient id="lash2-foil" gradientUnits="userSpaceOnUse" x1="1000" y1="0" x2="480" y2="260">
+          <stop offset="0" stop-color="#b8735e"/><stop offset=".22" stop-color="#fdd3c0"/><stop offset=".38" stop-color="#d79a80"/>
+          <stop offset=".55" stop-color="#fbe2d3"/><stop offset=".75" stop-color="#c98673"/><stop offset="1" stop-color="#e7b29b"/>
         </linearGradient>
+        <linearGradient id="lash2-ff" gradientUnits="userSpaceOnUse" x1="1000" y1="0" x2="440" y2="200">
+          <stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <mask id="lash2-fm" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash2-ff)"/></mask>
+        <radialGradient id="lash2-fade" gradientUnits="userSpaceOnUse" cx="1000" cy="0" r="980">
+          <stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#fff"/><stop offset=".97" stop-color="#fff" stop-opacity="0"/>
+        </radialGradient>
+        <mask id="lash2-m" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash2-fade)"/></mask>
       </defs>
-      <g>
-        <g class="lashdeco-shadow" fill="#9b5b49" transform="translate(3 5)"><path d="M60.0 560.0 C300.0 330.0 700.0 300.0 930.0 470.0 C701.6 315.9 301.6 345.9 60.0 560.0Z"/><path d="M92.9 539.9 C80.4 491.9 89.5 437.1 107.3 450.5 C96.5 438.2 87.4 493.0 92.9 539.9Z"/><path d="M125.9 521.2 C115.3 465.4 129.5 402.6 153.2 419.4 C138.5 405.0 124.3 467.8 125.9 521.2Z"/><path d="M159.1 503.8 C151.2 438.3 172.0 365.7 203.4 386.7 C180.2 368.8 159.4 441.4 159.1 503.8Z"/><path d="M192.5 487.8 C188.4 411.3 217.7 327.7 258.7 353.9 C224.9 331.2 195.6 414.8 192.5 487.8Z"/><path d="M226.0 473.2 C227.2 384.9 266.9 289.8 319.3 321.9 C275.9 295.3 236.2 390.4 226.0 473.2Z"/><path d="M259.7 460.0 C267.8 359.6 319.7 253.3 385.2 291.9 C327.5 259.1 275.6 365.5 259.7 460.0Z"/><path d="M293.5 448.1 C310.1 336.2 375.9 219.3 456.0 264.9 C382.4 225.1 316.7 342.0 293.5 448.1Z"/><path d="M327.5 437.6 C354.1 315.1 435.0 189.1 530.7 241.8 C443.0 197.3 362.1 323.4 327.5 437.6Z"/><path d="M361.7 428.5 C399.5 296.9 496.4 163.6 608.4 223.5 C503.1 171.6 406.2 304.9 361.7 428.5Z"/><path d="M396.0 420.8 C446.0 282.0 559.2 143.9 687.3 210.6 C564.6 151.3 451.4 289.5 396.0 420.8Z"/><path d="M430.5 414.4 C493.0 271.0 622.1 130.7 765.7 203.6 C628.5 140.8 499.4 281.1 430.5 414.4Z"/><path d="M465.1 409.5 C540.0 264.0 684.0 124.4 841.7 202.6 C689.1 133.7 545.2 273.4 465.1 409.5Z"/><path d="M499.9 405.9 C586.5 261.3 743.4 125.3 913.2 207.8 C747.4 133.7 590.5 269.7 499.9 405.9Z"/><path d="M534.9 403.6 C631.6 262.9 799.1 133.4 978.2 218.6 C803.7 144.4 636.2 273.9 534.9 403.6Z"/><path d="M570.0 402.8 C675.0 268.6 849.7 148.2 1034.8 234.6 C853.3 158.0 678.6 278.5 570.0 402.8Z"/><path d="M605.3 403.3 C716.1 278.2 894.3 169.0 1081.5 255.0 C897.0 177.6 718.8 286.9 605.3 403.3Z"/><path d="M640.7 405.2 C754.4 291.3 932.1 194.9 1117.2 278.7 C935.1 206.0 757.3 302.4 640.7 405.2Z"/><path d="M676.3 408.5 C789.7 307.4 962.6 224.9 1141.5 304.7 C964.8 234.7 791.9 317.2 676.3 408.5Z"/><path d="M712.1 413.2 C821.9 325.9 985.8 257.7 1154.3 331.9 C987.3 266.1 823.4 334.3 712.1 413.2Z"/><path d="M748.0 419.2 C851.0 346.2 1002.0 291.9 1156.4 359.1 C1003.6 302.4 852.6 356.7 748.0 419.2Z"/><path d="M784.1 426.6 C877.5 367.7 1012.2 326.5 1149.1 385.5 C1013.2 335.6 878.5 376.8 784.1 426.6Z"/><path d="M820.3 435.4 C901.8 389.8 1017.6 360.2 1134.7 410.2 C1018.2 368.0 902.4 397.6 820.3 435.4Z"/><path d="M856.7 445.6 C924.7 411.9 1020.1 392.1 1116.1 432.8 C1020.5 401.4 925.2 421.3 856.7 445.6Z"/><path d="M893.3 457.1 C947.5 433.6 1022.5 421.4 1097.8 453.0 C1022.6 429.3 947.6 441.5 893.3 457.1Z"/></g>
-        <g class="lashdeco-hl" fill="#fff" transform="translate(-2 -2)"><path d="M60.0 560.0 C300.0 330.0 700.0 300.0 930.0 470.0 C701.6 315.9 301.6 345.9 60.0 560.0Z"/><path d="M92.9 539.9 C80.4 491.9 89.5 437.1 107.3 450.5 C96.5 438.2 87.4 493.0 92.9 539.9Z"/><path d="M125.9 521.2 C115.3 465.4 129.5 402.6 153.2 419.4 C138.5 405.0 124.3 467.8 125.9 521.2Z"/><path d="M159.1 503.8 C151.2 438.3 172.0 365.7 203.4 386.7 C180.2 368.8 159.4 441.4 159.1 503.8Z"/><path d="M192.5 487.8 C188.4 411.3 217.7 327.7 258.7 353.9 C224.9 331.2 195.6 414.8 192.5 487.8Z"/><path d="M226.0 473.2 C227.2 384.9 266.9 289.8 319.3 321.9 C275.9 295.3 236.2 390.4 226.0 473.2Z"/><path d="M259.7 460.0 C267.8 359.6 319.7 253.3 385.2 291.9 C327.5 259.1 275.6 365.5 259.7 460.0Z"/><path d="M293.5 448.1 C310.1 336.2 375.9 219.3 456.0 264.9 C382.4 225.1 316.7 342.0 293.5 448.1Z"/><path d="M327.5 437.6 C354.1 315.1 435.0 189.1 530.7 241.8 C443.0 197.3 362.1 323.4 327.5 437.6Z"/><path d="M361.7 428.5 C399.5 296.9 496.4 163.6 608.4 223.5 C503.1 171.6 406.2 304.9 361.7 428.5Z"/><path d="M396.0 420.8 C446.0 282.0 559.2 143.9 687.3 210.6 C564.6 151.3 451.4 289.5 396.0 420.8Z"/><path d="M430.5 414.4 C493.0 271.0 622.1 130.7 765.7 203.6 C628.5 140.8 499.4 281.1 430.5 414.4Z"/><path d="M465.1 409.5 C540.0 264.0 684.0 124.4 841.7 202.6 C689.1 133.7 545.2 273.4 465.1 409.5Z"/><path d="M499.9 405.9 C586.5 261.3 743.4 125.3 913.2 207.8 C747.4 133.7 590.5 269.7 499.9 405.9Z"/><path d="M534.9 403.6 C631.6 262.9 799.1 133.4 978.2 218.6 C803.7 144.4 636.2 273.9 534.9 403.6Z"/><path d="M570.0 402.8 C675.0 268.6 849.7 148.2 1034.8 234.6 C853.3 158.0 678.6 278.5 570.0 402.8Z"/><path d="M605.3 403.3 C716.1 278.2 894.3 169.0 1081.5 255.0 C897.0 177.6 718.8 286.9 605.3 403.3Z"/><path d="M640.7 405.2 C754.4 291.3 932.1 194.9 1117.2 278.7 C935.1 206.0 757.3 302.4 640.7 405.2Z"/><path d="M676.3 408.5 C789.7 307.4 962.6 224.9 1141.5 304.7 C964.8 234.7 791.9 317.2 676.3 408.5Z"/><path d="M712.1 413.2 C821.9 325.9 985.8 257.7 1154.3 331.9 C987.3 266.1 823.4 334.3 712.1 413.2Z"/><path d="M748.0 419.2 C851.0 346.2 1002.0 291.9 1156.4 359.1 C1003.6 302.4 852.6 356.7 748.0 419.2Z"/><path d="M784.1 426.6 C877.5 367.7 1012.2 326.5 1149.1 385.5 C1013.2 335.6 878.5 376.8 784.1 426.6Z"/><path d="M820.3 435.4 C901.8 389.8 1017.6 360.2 1134.7 410.2 C1018.2 368.0 902.4 397.6 820.3 435.4Z"/><path d="M856.7 445.6 C924.7 411.9 1020.1 392.1 1116.1 432.8 C1020.5 401.4 925.2 421.3 856.7 445.6Z"/><path d="M893.3 457.1 C947.5 433.6 1022.5 421.4 1097.8 453.0 C1022.6 429.3 947.6 441.5 893.3 457.1Z"/></g>
-        <g class="lashdeco-main" fill="url(#lash3-g)"><path d="M60.0 560.0 C300.0 330.0 700.0 300.0 930.0 470.0 C701.6 315.9 301.6 345.9 60.0 560.0Z"/><path d="M92.9 539.9 C80.4 491.9 89.5 437.1 107.3 450.5 C96.5 438.2 87.4 493.0 92.9 539.9Z"/><path d="M125.9 521.2 C115.3 465.4 129.5 402.6 153.2 419.4 C138.5 405.0 124.3 467.8 125.9 521.2Z"/><path d="M159.1 503.8 C151.2 438.3 172.0 365.7 203.4 386.7 C180.2 368.8 159.4 441.4 159.1 503.8Z"/><path d="M192.5 487.8 C188.4 411.3 217.7 327.7 258.7 353.9 C224.9 331.2 195.6 414.8 192.5 487.8Z"/><path d="M226.0 473.2 C227.2 384.9 266.9 289.8 319.3 321.9 C275.9 295.3 236.2 390.4 226.0 473.2Z"/><path d="M259.7 460.0 C267.8 359.6 319.7 253.3 385.2 291.9 C327.5 259.1 275.6 365.5 259.7 460.0Z"/><path d="M293.5 448.1 C310.1 336.2 375.9 219.3 456.0 264.9 C382.4 225.1 316.7 342.0 293.5 448.1Z"/><path d="M327.5 437.6 C354.1 315.1 435.0 189.1 530.7 241.8 C443.0 197.3 362.1 323.4 327.5 437.6Z"/><path d="M361.7 428.5 C399.5 296.9 496.4 163.6 608.4 223.5 C503.1 171.6 406.2 304.9 361.7 428.5Z"/><path d="M396.0 420.8 C446.0 282.0 559.2 143.9 687.3 210.6 C564.6 151.3 451.4 289.5 396.0 420.8Z"/><path d="M430.5 414.4 C493.0 271.0 622.1 130.7 765.7 203.6 C628.5 140.8 499.4 281.1 430.5 414.4Z"/><path d="M465.1 409.5 C540.0 264.0 684.0 124.4 841.7 202.6 C689.1 133.7 545.2 273.4 465.1 409.5Z"/><path d="M499.9 405.9 C586.5 261.3 743.4 125.3 913.2 207.8 C747.4 133.7 590.5 269.7 499.9 405.9Z"/><path d="M534.9 403.6 C631.6 262.9 799.1 133.4 978.2 218.6 C803.7 144.4 636.2 273.9 534.9 403.6Z"/><path d="M570.0 402.8 C675.0 268.6 849.7 148.2 1034.8 234.6 C853.3 158.0 678.6 278.5 570.0 402.8Z"/><path d="M605.3 403.3 C716.1 278.2 894.3 169.0 1081.5 255.0 C897.0 177.6 718.8 286.9 605.3 403.3Z"/><path d="M640.7 405.2 C754.4 291.3 932.1 194.9 1117.2 278.7 C935.1 206.0 757.3 302.4 640.7 405.2Z"/><path d="M676.3 408.5 C789.7 307.4 962.6 224.9 1141.5 304.7 C964.8 234.7 791.9 317.2 676.3 408.5Z"/><path d="M712.1 413.2 C821.9 325.9 985.8 257.7 1154.3 331.9 C987.3 266.1 823.4 334.3 712.1 413.2Z"/><path d="M748.0 419.2 C851.0 346.2 1002.0 291.9 1156.4 359.1 C1003.6 302.4 852.6 356.7 748.0 419.2Z"/><path d="M784.1 426.6 C877.5 367.7 1012.2 326.5 1149.1 385.5 C1013.2 335.6 878.5 376.8 784.1 426.6Z"/><path d="M820.3 435.4 C901.8 389.8 1017.6 360.2 1134.7 410.2 C1018.2 368.0 902.4 397.6 820.3 435.4Z"/><path d="M856.7 445.6 C924.7 411.9 1020.1 392.1 1116.1 432.8 C1020.5 401.4 925.2 421.3 856.7 445.6Z"/><path d="M893.3 457.1 C947.5 433.6 1022.5 421.4 1097.8 453.0 C1022.6 429.3 947.6 441.5 893.3 457.1Z"/></g>
+      <g mask="url(#lash2-m)">
+        <g class="lashdeco-emboss" fill="#000" filter="url(#lash2-e)"><path d="M-120.0 70.0 C440.0 160.0 740.0 -40.0 1120.0 -30.0 C744.0 9.8 444.0 209.8 -120.0 70.0Z"/><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 304.0 C440.0 340.0 740.0 128.0 1120.0 126.0 C745.9 169.3 445.9 381.3 -120.0 304.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/><path d="M-120.0 460.0 C440.0 460.0 740.0 240.0 1120.0 230.0 C749.6 291.7 449.6 511.7 -120.0 460.0Z"/><path d="M-120.0 538.0 C440.0 520.0 740.0 296.0 1120.0 282.0 C752.5 356.7 452.5 580.7 -120.0 538.0Z"/><path d="M-120.0 616.0 C440.0 580.0 740.0 352.0 1120.0 334.0 C751.9 404.5 451.9 632.5 -120.0 616.0Z"/><path d="M-120.0 694.0 C440.0 640.0 740.0 408.0 1120.0 386.0 C749.7 446.9 449.7 678.9 -120.0 694.0Z"/></g>
+        <g class="lashdeco-foil" mask="url(#lash2-fm)">
+          <g fill="url(#lash2-foil)"><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/></g>
+          <g fill="#000" filter="url(#lash2-e)" opacity=".7"><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/></g>
+        </g>
       </g>
     </svg></div>
   <div class="wrap">
@@ -555,32 +613,80 @@
 
 <!-- FINAL CTA -->
 <section class="has-lash final" aria-labelledby="final-h">
-  <div class="lashwrap lw-final-r lw-dark" aria-hidden="true"><svg class="lashdeco ld-fan" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+  <div class="lashwrap lw-final-bl lw-dark" aria-hidden="true"><svg class="lashdeco" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
       <defs>
-        <linearGradient id="lash5-g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1400" y2="-300">
-          <stop offset="0" stop-color="#e9ab8e"/><stop offset=".42" stop-color="#e9ab8e"/>
-          <stop offset=".5" stop-color="#fff0e6"/><stop offset=".58" stop-color="#e9ab8e"/><stop offset="1" stop-color="#e9ab8e"/>
-          <animateTransform attributeName="gradientTransform" type="translate" from="-1400 300" to="1100 -240" dur="11s" repeatCount="indefinite"/>
+        <filter id="lash4-e" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="bump"/>
+          <feSpecularLighting in="bump" surfaceScale="6" specularConstant="0.45" specularExponent="16" lighting-color="#fff" result="spec">
+            <feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
+          <feComposite in="spec" in2="SourceAlpha" operator="in" result="hiLight"/>
+          <feDiffuseLighting in="bump" surfaceScale="6" diffuseConstant="1" lighting-color="#fff" result="diff">
+            <feDistantLight azimuth="235" elevation="38"/></feDiffuseLighting>
+          <feColorMatrix in="diff" type="matrix" values="0 0 0 0 0.000  0 0 0 0 0.039  0 0 0 0 0.094  -1.87 0 0 0 1.12" result="shadeA"/>
+          <feComposite in="shadeA" in2="SourceAlpha" operator="in" result="inner"/>
+          <feOffset in="bump" dx="5" dy="8" result="off"/>
+          <feFlood flood-color="#000a18" flood-opacity="0.32"/>
+          <feComposite in2="off" operator="in"/>
+          <feComposite in2="SourceAlpha" operator="out" result="outer"/>
+          <feMerge><feMergeNode in="outer"/><feMergeNode in="inner"/><feMergeNode in="hiLight"/></feMerge>
+        </filter>
+        <linearGradient id="lash4-foil" gradientUnits="userSpaceOnUse" x1="0" y1="600" x2="520" y2="340">
+          <stop offset="0" stop-color="#b8735e"/><stop offset=".22" stop-color="#fdd3c0"/><stop offset=".38" stop-color="#d79a80"/>
+          <stop offset=".55" stop-color="#fbe2d3"/><stop offset=".75" stop-color="#c98673"/><stop offset="1" stop-color="#e7b29b"/>
         </linearGradient>
+        <linearGradient id="lash4-ff" gradientUnits="userSpaceOnUse" x1="0" y1="600" x2="560" y2="400">
+          <stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <mask id="lash4-fm" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash4-ff)"/></mask>
+        <radialGradient id="lash4-fade" gradientUnits="userSpaceOnUse" cx="0" cy="600" r="980">
+          <stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#fff"/><stop offset=".97" stop-color="#fff" stop-opacity="0"/>
+        </radialGradient>
+        <mask id="lash4-m" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash4-fade)"/></mask>
       </defs>
-      <g>
-        <g class="lashdeco-shadow" fill="#021a35" transform="translate(3 5)"><path d="M60.0 560.0 C300.0 330.0 700.0 300.0 930.0 470.0 C701.6 315.9 301.6 345.9 60.0 560.0Z"/><path d="M92.9 539.9 C80.4 491.9 89.5 437.1 107.3 450.5 C96.5 438.2 87.4 493.0 92.9 539.9Z"/><path d="M125.9 521.2 C115.3 465.4 129.5 402.6 153.2 419.4 C138.5 405.0 124.3 467.8 125.9 521.2Z"/><path d="M159.1 503.8 C151.2 438.3 172.0 365.7 203.4 386.7 C180.2 368.8 159.4 441.4 159.1 503.8Z"/><path d="M192.5 487.8 C188.4 411.3 217.7 327.7 258.7 353.9 C224.9 331.2 195.6 414.8 192.5 487.8Z"/><path d="M226.0 473.2 C227.2 384.9 266.9 289.8 319.3 321.9 C275.9 295.3 236.2 390.4 226.0 473.2Z"/><path d="M259.7 460.0 C267.8 359.6 319.7 253.3 385.2 291.9 C327.5 259.1 275.6 365.5 259.7 460.0Z"/><path d="M293.5 448.1 C310.1 336.2 375.9 219.3 456.0 264.9 C382.4 225.1 316.7 342.0 293.5 448.1Z"/><path d="M327.5 437.6 C354.1 315.1 435.0 189.1 530.7 241.8 C443.0 197.3 362.1 323.4 327.5 437.6Z"/><path d="M361.7 428.5 C399.5 296.9 496.4 163.6 608.4 223.5 C503.1 171.6 406.2 304.9 361.7 428.5Z"/><path d="M396.0 420.8 C446.0 282.0 559.2 143.9 687.3 210.6 C564.6 151.3 451.4 289.5 396.0 420.8Z"/><path d="M430.5 414.4 C493.0 271.0 622.1 130.7 765.7 203.6 C628.5 140.8 499.4 281.1 430.5 414.4Z"/><path d="M465.1 409.5 C540.0 264.0 684.0 124.4 841.7 202.6 C689.1 133.7 545.2 273.4 465.1 409.5Z"/><path d="M499.9 405.9 C586.5 261.3 743.4 125.3 913.2 207.8 C747.4 133.7 590.5 269.7 499.9 405.9Z"/><path d="M534.9 403.6 C631.6 262.9 799.1 133.4 978.2 218.6 C803.7 144.4 636.2 273.9 534.9 403.6Z"/><path d="M570.0 402.8 C675.0 268.6 849.7 148.2 1034.8 234.6 C853.3 158.0 678.6 278.5 570.0 402.8Z"/><path d="M605.3 403.3 C716.1 278.2 894.3 169.0 1081.5 255.0 C897.0 177.6 718.8 286.9 605.3 403.3Z"/><path d="M640.7 405.2 C754.4 291.3 932.1 194.9 1117.2 278.7 C935.1 206.0 757.3 302.4 640.7 405.2Z"/><path d="M676.3 408.5 C789.7 307.4 962.6 224.9 1141.5 304.7 C964.8 234.7 791.9 317.2 676.3 408.5Z"/><path d="M712.1 413.2 C821.9 325.9 985.8 257.7 1154.3 331.9 C987.3 266.1 823.4 334.3 712.1 413.2Z"/><path d="M748.0 419.2 C851.0 346.2 1002.0 291.9 1156.4 359.1 C1003.6 302.4 852.6 356.7 748.0 419.2Z"/><path d="M784.1 426.6 C877.5 367.7 1012.2 326.5 1149.1 385.5 C1013.2 335.6 878.5 376.8 784.1 426.6Z"/><path d="M820.3 435.4 C901.8 389.8 1017.6 360.2 1134.7 410.2 C1018.2 368.0 902.4 397.6 820.3 435.4Z"/><path d="M856.7 445.6 C924.7 411.9 1020.1 392.1 1116.1 432.8 C1020.5 401.4 925.2 421.3 856.7 445.6Z"/><path d="M893.3 457.1 C947.5 433.6 1022.5 421.4 1097.8 453.0 C1022.6 429.3 947.6 441.5 893.3 457.1Z"/></g>
-        
-        <g class="lashdeco-main" fill="url(#lash5-g)"><path d="M60.0 560.0 C300.0 330.0 700.0 300.0 930.0 470.0 C701.6 315.9 301.6 345.9 60.0 560.0Z"/><path d="M92.9 539.9 C80.4 491.9 89.5 437.1 107.3 450.5 C96.5 438.2 87.4 493.0 92.9 539.9Z"/><path d="M125.9 521.2 C115.3 465.4 129.5 402.6 153.2 419.4 C138.5 405.0 124.3 467.8 125.9 521.2Z"/><path d="M159.1 503.8 C151.2 438.3 172.0 365.7 203.4 386.7 C180.2 368.8 159.4 441.4 159.1 503.8Z"/><path d="M192.5 487.8 C188.4 411.3 217.7 327.7 258.7 353.9 C224.9 331.2 195.6 414.8 192.5 487.8Z"/><path d="M226.0 473.2 C227.2 384.9 266.9 289.8 319.3 321.9 C275.9 295.3 236.2 390.4 226.0 473.2Z"/><path d="M259.7 460.0 C267.8 359.6 319.7 253.3 385.2 291.9 C327.5 259.1 275.6 365.5 259.7 460.0Z"/><path d="M293.5 448.1 C310.1 336.2 375.9 219.3 456.0 264.9 C382.4 225.1 316.7 342.0 293.5 448.1Z"/><path d="M327.5 437.6 C354.1 315.1 435.0 189.1 530.7 241.8 C443.0 197.3 362.1 323.4 327.5 437.6Z"/><path d="M361.7 428.5 C399.5 296.9 496.4 163.6 608.4 223.5 C503.1 171.6 406.2 304.9 361.7 428.5Z"/><path d="M396.0 420.8 C446.0 282.0 559.2 143.9 687.3 210.6 C564.6 151.3 451.4 289.5 396.0 420.8Z"/><path d="M430.5 414.4 C493.0 271.0 622.1 130.7 765.7 203.6 C628.5 140.8 499.4 281.1 430.5 414.4Z"/><path d="M465.1 409.5 C540.0 264.0 684.0 124.4 841.7 202.6 C689.1 133.7 545.2 273.4 465.1 409.5Z"/><path d="M499.9 405.9 C586.5 261.3 743.4 125.3 913.2 207.8 C747.4 133.7 590.5 269.7 499.9 405.9Z"/><path d="M534.9 403.6 C631.6 262.9 799.1 133.4 978.2 218.6 C803.7 144.4 636.2 273.9 534.9 403.6Z"/><path d="M570.0 402.8 C675.0 268.6 849.7 148.2 1034.8 234.6 C853.3 158.0 678.6 278.5 570.0 402.8Z"/><path d="M605.3 403.3 C716.1 278.2 894.3 169.0 1081.5 255.0 C897.0 177.6 718.8 286.9 605.3 403.3Z"/><path d="M640.7 405.2 C754.4 291.3 932.1 194.9 1117.2 278.7 C935.1 206.0 757.3 302.4 640.7 405.2Z"/><path d="M676.3 408.5 C789.7 307.4 962.6 224.9 1141.5 304.7 C964.8 234.7 791.9 317.2 676.3 408.5Z"/><path d="M712.1 413.2 C821.9 325.9 985.8 257.7 1154.3 331.9 C987.3 266.1 823.4 334.3 712.1 413.2Z"/><path d="M748.0 419.2 C851.0 346.2 1002.0 291.9 1156.4 359.1 C1003.6 302.4 852.6 356.7 748.0 419.2Z"/><path d="M784.1 426.6 C877.5 367.7 1012.2 326.5 1149.1 385.5 C1013.2 335.6 878.5 376.8 784.1 426.6Z"/><path d="M820.3 435.4 C901.8 389.8 1017.6 360.2 1134.7 410.2 C1018.2 368.0 902.4 397.6 820.3 435.4Z"/><path d="M856.7 445.6 C924.7 411.9 1020.1 392.1 1116.1 432.8 C1020.5 401.4 925.2 421.3 856.7 445.6Z"/><path d="M893.3 457.1 C947.5 433.6 1022.5 421.4 1097.8 453.0 C1022.6 429.3 947.6 441.5 893.3 457.1Z"/></g>
+      <g mask="url(#lash4-m)">
+        <g class="lashdeco-emboss" fill="#000" filter="url(#lash4-e)"><path d="M1120.0 520.0 C640.0 300.0 300.0 640.0 -120.0 420.0 C304.2 588.2 644.2 248.2 1120.0 520.0Z"/><path d="M1120.0 438.0 C640.0 236.0 300.0 570.0 -120.0 356.0 C304.1 508.2 644.1 174.2 1120.0 438.0Z"/><path d="M1120.0 356.0 C640.0 172.0 300.0 500.0 -120.0 292.0 C302.5 450.6 642.5 122.6 1120.0 356.0Z"/><path d="M1120.0 274.0 C640.0 108.0 300.0 430.0 -120.0 228.0 C301.6 387.3 641.6 65.3 1120.0 274.0Z"/><path d="M1120.0 192.0 C640.0 44.0 300.0 360.0 -120.0 164.0 C301.3 303.1 641.3 -12.9 1120.0 192.0Z"/><path d="M1120.0 110.0 C640.0 -20.0 300.0 290.0 -120.0 100.0 C300.5 230.0 640.5 -80.0 1120.0 110.0Z"/></g>
+        <g class="lashdeco-foil" mask="url(#lash4-fm)">
+          <g fill="url(#lash4-foil)"><path d="M1120.0 438.0 C640.0 236.0 300.0 570.0 -120.0 356.0 C304.1 508.2 644.1 174.2 1120.0 438.0Z"/><path d="M1120.0 274.0 C640.0 108.0 300.0 430.0 -120.0 228.0 C301.6 387.3 641.6 65.3 1120.0 274.0Z"/></g>
+          <g fill="#000" filter="url(#lash4-e)" opacity=".7"><path d="M1120.0 438.0 C640.0 236.0 300.0 570.0 -120.0 356.0 C304.1 508.2 644.1 174.2 1120.0 438.0Z"/><path d="M1120.0 274.0 C640.0 108.0 300.0 430.0 -120.0 228.0 C301.6 387.3 641.6 65.3 1120.0 274.0Z"/></g>
+        </g>
       </g>
     </svg></div>
-  <div class="lashwrap lw-final-l lw-dark" aria-hidden="true"><svg class="lashdeco ld-fan" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+  <div class="lashwrap lw-final-tr lw-dark" aria-hidden="true"><svg class="lashdeco" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
       <defs>
-        <linearGradient id="lash4-g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1400" y2="-300">
-          <stop offset="0" stop-color="#e9ab8e"/><stop offset=".42" stop-color="#e9ab8e"/>
-          <stop offset=".5" stop-color="#fff0e6"/><stop offset=".58" stop-color="#e9ab8e"/><stop offset="1" stop-color="#e9ab8e"/>
-          <animateTransform attributeName="gradientTransform" type="translate" from="-1400 300" to="1100 -240" dur="11s" repeatCount="indefinite"/>
+        <filter id="lash3-e" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="bump"/>
+          <feSpecularLighting in="bump" surfaceScale="6" specularConstant="0.45" specularExponent="16" lighting-color="#fff" result="spec">
+            <feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
+          <feComposite in="spec" in2="SourceAlpha" operator="in" result="hiLight"/>
+          <feDiffuseLighting in="bump" surfaceScale="6" diffuseConstant="1" lighting-color="#fff" result="diff">
+            <feDistantLight azimuth="235" elevation="38"/></feDiffuseLighting>
+          <feColorMatrix in="diff" type="matrix" values="0 0 0 0 0.000  0 0 0 0 0.039  0 0 0 0 0.094  -1.87 0 0 0 1.12" result="shadeA"/>
+          <feComposite in="shadeA" in2="SourceAlpha" operator="in" result="inner"/>
+          <feOffset in="bump" dx="5" dy="8" result="off"/>
+          <feFlood flood-color="#000a18" flood-opacity="0.32"/>
+          <feComposite in2="off" operator="in"/>
+          <feComposite in2="SourceAlpha" operator="out" result="outer"/>
+          <feMerge><feMergeNode in="outer"/><feMergeNode in="inner"/><feMergeNode in="hiLight"/></feMerge>
+        </filter>
+        <linearGradient id="lash3-foil" gradientUnits="userSpaceOnUse" x1="1000" y1="0" x2="480" y2="260">
+          <stop offset="0" stop-color="#b8735e"/><stop offset=".22" stop-color="#fdd3c0"/><stop offset=".38" stop-color="#d79a80"/>
+          <stop offset=".55" stop-color="#fbe2d3"/><stop offset=".75" stop-color="#c98673"/><stop offset="1" stop-color="#e7b29b"/>
         </linearGradient>
+        <linearGradient id="lash3-ff" gradientUnits="userSpaceOnUse" x1="1000" y1="0" x2="440" y2="200">
+          <stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <mask id="lash3-fm" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash3-ff)"/></mask>
+        <radialGradient id="lash3-fade" gradientUnits="userSpaceOnUse" cx="1000" cy="0" r="980">
+          <stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#fff"/><stop offset=".97" stop-color="#fff" stop-opacity="0"/>
+        </radialGradient>
+        <mask id="lash3-m" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash3-fade)"/></mask>
       </defs>
-      <g transform="translate(1000 0) scale(-1 1)">
-        <g class="lashdeco-shadow" fill="#021a35" transform="translate(3 5)"><path d="M60.0 560.0 C300.0 330.0 700.0 300.0 930.0 470.0 C701.6 315.9 301.6 345.9 60.0 560.0Z"/><path d="M92.9 539.9 C80.4 491.9 89.5 437.1 107.3 450.5 C96.5 438.2 87.4 493.0 92.9 539.9Z"/><path d="M125.9 521.2 C115.3 465.4 129.5 402.6 153.2 419.4 C138.5 405.0 124.3 467.8 125.9 521.2Z"/><path d="M159.1 503.8 C151.2 438.3 172.0 365.7 203.4 386.7 C180.2 368.8 159.4 441.4 159.1 503.8Z"/><path d="M192.5 487.8 C188.4 411.3 217.7 327.7 258.7 353.9 C224.9 331.2 195.6 414.8 192.5 487.8Z"/><path d="M226.0 473.2 C227.2 384.9 266.9 289.8 319.3 321.9 C275.9 295.3 236.2 390.4 226.0 473.2Z"/><path d="M259.7 460.0 C267.8 359.6 319.7 253.3 385.2 291.9 C327.5 259.1 275.6 365.5 259.7 460.0Z"/><path d="M293.5 448.1 C310.1 336.2 375.9 219.3 456.0 264.9 C382.4 225.1 316.7 342.0 293.5 448.1Z"/><path d="M327.5 437.6 C354.1 315.1 435.0 189.1 530.7 241.8 C443.0 197.3 362.1 323.4 327.5 437.6Z"/><path d="M361.7 428.5 C399.5 296.9 496.4 163.6 608.4 223.5 C503.1 171.6 406.2 304.9 361.7 428.5Z"/><path d="M396.0 420.8 C446.0 282.0 559.2 143.9 687.3 210.6 C564.6 151.3 451.4 289.5 396.0 420.8Z"/><path d="M430.5 414.4 C493.0 271.0 622.1 130.7 765.7 203.6 C628.5 140.8 499.4 281.1 430.5 414.4Z"/><path d="M465.1 409.5 C540.0 264.0 684.0 124.4 841.7 202.6 C689.1 133.7 545.2 273.4 465.1 409.5Z"/><path d="M499.9 405.9 C586.5 261.3 743.4 125.3 913.2 207.8 C747.4 133.7 590.5 269.7 499.9 405.9Z"/><path d="M534.9 403.6 C631.6 262.9 799.1 133.4 978.2 218.6 C803.7 144.4 636.2 273.9 534.9 403.6Z"/><path d="M570.0 402.8 C675.0 268.6 849.7 148.2 1034.8 234.6 C853.3 158.0 678.6 278.5 570.0 402.8Z"/><path d="M605.3 403.3 C716.1 278.2 894.3 169.0 1081.5 255.0 C897.0 177.6 718.8 286.9 605.3 403.3Z"/><path d="M640.7 405.2 C754.4 291.3 932.1 194.9 1117.2 278.7 C935.1 206.0 757.3 302.4 640.7 405.2Z"/><path d="M676.3 408.5 C789.7 307.4 962.6 224.9 1141.5 304.7 C964.8 234.7 791.9 317.2 676.3 408.5Z"/><path d="M712.1 413.2 C821.9 325.9 985.8 257.7 1154.3 331.9 C987.3 266.1 823.4 334.3 712.1 413.2Z"/><path d="M748.0 419.2 C851.0 346.2 1002.0 291.9 1156.4 359.1 C1003.6 302.4 852.6 356.7 748.0 419.2Z"/><path d="M784.1 426.6 C877.5 367.7 1012.2 326.5 1149.1 385.5 C1013.2 335.6 878.5 376.8 784.1 426.6Z"/><path d="M820.3 435.4 C901.8 389.8 1017.6 360.2 1134.7 410.2 C1018.2 368.0 902.4 397.6 820.3 435.4Z"/><path d="M856.7 445.6 C924.7 411.9 1020.1 392.1 1116.1 432.8 C1020.5 401.4 925.2 421.3 856.7 445.6Z"/><path d="M893.3 457.1 C947.5 433.6 1022.5 421.4 1097.8 453.0 C1022.6 429.3 947.6 441.5 893.3 457.1Z"/></g>
-        
-        <g class="lashdeco-main" fill="url(#lash4-g)"><path d="M60.0 560.0 C300.0 330.0 700.0 300.0 930.0 470.0 C701.6 315.9 301.6 345.9 60.0 560.0Z"/><path d="M92.9 539.9 C80.4 491.9 89.5 437.1 107.3 450.5 C96.5 438.2 87.4 493.0 92.9 539.9Z"/><path d="M125.9 521.2 C115.3 465.4 129.5 402.6 153.2 419.4 C138.5 405.0 124.3 467.8 125.9 521.2Z"/><path d="M159.1 503.8 C151.2 438.3 172.0 365.7 203.4 386.7 C180.2 368.8 159.4 441.4 159.1 503.8Z"/><path d="M192.5 487.8 C188.4 411.3 217.7 327.7 258.7 353.9 C224.9 331.2 195.6 414.8 192.5 487.8Z"/><path d="M226.0 473.2 C227.2 384.9 266.9 289.8 319.3 321.9 C275.9 295.3 236.2 390.4 226.0 473.2Z"/><path d="M259.7 460.0 C267.8 359.6 319.7 253.3 385.2 291.9 C327.5 259.1 275.6 365.5 259.7 460.0Z"/><path d="M293.5 448.1 C310.1 336.2 375.9 219.3 456.0 264.9 C382.4 225.1 316.7 342.0 293.5 448.1Z"/><path d="M327.5 437.6 C354.1 315.1 435.0 189.1 530.7 241.8 C443.0 197.3 362.1 323.4 327.5 437.6Z"/><path d="M361.7 428.5 C399.5 296.9 496.4 163.6 608.4 223.5 C503.1 171.6 406.2 304.9 361.7 428.5Z"/><path d="M396.0 420.8 C446.0 282.0 559.2 143.9 687.3 210.6 C564.6 151.3 451.4 289.5 396.0 420.8Z"/><path d="M430.5 414.4 C493.0 271.0 622.1 130.7 765.7 203.6 C628.5 140.8 499.4 281.1 430.5 414.4Z"/><path d="M465.1 409.5 C540.0 264.0 684.0 124.4 841.7 202.6 C689.1 133.7 545.2 273.4 465.1 409.5Z"/><path d="M499.9 405.9 C586.5 261.3 743.4 125.3 913.2 207.8 C747.4 133.7 590.5 269.7 499.9 405.9Z"/><path d="M534.9 403.6 C631.6 262.9 799.1 133.4 978.2 218.6 C803.7 144.4 636.2 273.9 534.9 403.6Z"/><path d="M570.0 402.8 C675.0 268.6 849.7 148.2 1034.8 234.6 C853.3 158.0 678.6 278.5 570.0 402.8Z"/><path d="M605.3 403.3 C716.1 278.2 894.3 169.0 1081.5 255.0 C897.0 177.6 718.8 286.9 605.3 403.3Z"/><path d="M640.7 405.2 C754.4 291.3 932.1 194.9 1117.2 278.7 C935.1 206.0 757.3 302.4 640.7 405.2Z"/><path d="M676.3 408.5 C789.7 307.4 962.6 224.9 1141.5 304.7 C964.8 234.7 791.9 317.2 676.3 408.5Z"/><path d="M712.1 413.2 C821.9 325.9 985.8 257.7 1154.3 331.9 C987.3 266.1 823.4 334.3 712.1 413.2Z"/><path d="M748.0 419.2 C851.0 346.2 1002.0 291.9 1156.4 359.1 C1003.6 302.4 852.6 356.7 748.0 419.2Z"/><path d="M784.1 426.6 C877.5 367.7 1012.2 326.5 1149.1 385.5 C1013.2 335.6 878.5 376.8 784.1 426.6Z"/><path d="M820.3 435.4 C901.8 389.8 1017.6 360.2 1134.7 410.2 C1018.2 368.0 902.4 397.6 820.3 435.4Z"/><path d="M856.7 445.6 C924.7 411.9 1020.1 392.1 1116.1 432.8 C1020.5 401.4 925.2 421.3 856.7 445.6Z"/><path d="M893.3 457.1 C947.5 433.6 1022.5 421.4 1097.8 453.0 C1022.6 429.3 947.6 441.5 893.3 457.1Z"/></g>
+      <g mask="url(#lash3-m)">
+        <g class="lashdeco-emboss" fill="#000" filter="url(#lash3-e)"><path d="M-120.0 70.0 C440.0 160.0 740.0 -40.0 1120.0 -30.0 C744.0 9.8 444.0 209.8 -120.0 70.0Z"/><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 304.0 C440.0 340.0 740.0 128.0 1120.0 126.0 C745.9 169.3 445.9 381.3 -120.0 304.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/><path d="M-120.0 460.0 C440.0 460.0 740.0 240.0 1120.0 230.0 C749.6 291.7 449.6 511.7 -120.0 460.0Z"/><path d="M-120.0 538.0 C440.0 520.0 740.0 296.0 1120.0 282.0 C752.5 356.7 452.5 580.7 -120.0 538.0Z"/><path d="M-120.0 616.0 C440.0 580.0 740.0 352.0 1120.0 334.0 C751.9 404.5 451.9 632.5 -120.0 616.0Z"/><path d="M-120.0 694.0 C440.0 640.0 740.0 408.0 1120.0 386.0 C749.7 446.9 449.7 678.9 -120.0 694.0Z"/></g>
+        <g class="lashdeco-foil" mask="url(#lash3-fm)">
+          <g fill="url(#lash3-foil)"><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/></g>
+          <g fill="#000" filter="url(#lash3-e)" opacity=".7"><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/></g>
+        </g>
       </g>
     </svg></div>
   <div class="wrap">

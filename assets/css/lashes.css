@@ -1,52 +1,26 @@
-/* Large lash elements (after the logo's lash wing and the brand stationery).
-   Three shapes: flowing ribbons, a lash line ("fan") and the logo's wing drawn big.
-   Light sections: embossed tone on tone, like letterpress. Dark sections: metallic copper.
-   They sit in 4 of the 10 home page sections, each no wider than ~46% of the page,
-   with a slow drift and a soft highlight sliding along them. */
+/* Embossed lash ribbons, after Revive's Instagram and stationery artwork.
+   Ribbons pressed into the surface, shown by light and shadow only, with a few catching copper foil.
+   They sweep in from a corner and fade out. They never move.
+   Used in 4 of the 10 home page sections; each is at most half the page width. */
 
 .has-lash{position:relative;overflow:clip}
 .has-lash>.wrap{position:relative;z-index:2}
 
-.lashwrap{position:absolute;z-index:1;pointer-events:none;width:var(--lw,44vw);max-width:860px}
-.lashwrap svg{display:block;width:100%;height:auto;overflow:visible;
-  animation:lash-drift 16s ease-in-out infinite alternate;transform-origin:30% 80%}
-@keyframes lash-drift{from{transform:translate3d(0,0,0) rotate(0deg)}to{transform:translate3d(-12px,-14px,0) rotate(-1.6deg)}}
-.lashwrap:nth-of-type(even) svg{animation-duration:20s;animation-direction:alternate-reverse}
+.lashwrap{position:absolute;z-index:1;pointer-events:none;width:var(--lw,46vw);max-width:900px}
+.lashwrap svg{display:block;width:100%;height:auto}
+.lw-light{opacity:.95}
 
-/* Embossed (light) */
-.lw-light .lashdeco-main{opacity:.2}
-.lw-light .lashdeco-hl{opacity:.85}
-.lw-light .lashdeco-shadow{opacity:.12}
-/* Metallic (dark) */
-.lw-dark .lashdeco-main{opacity:.78}
-.lw-dark .lashdeco-shadow{opacity:.45}
-
-/* ---- Current page ---- */
-/* Logo mark embossed into the sky, top-left, well above the beach */
-.lw-hero-wing{--lw:46vw;left:-5vw;top:-3%}
-.lw-hero-wing .lashdeco-main{opacity:.16}
-
-/* ---- Dark page hero ---- */
-.lw-hero-rib{--lw:42vw;left:-8vw;bottom:-19%}
-.lw-hero-wing-d{--lw:30vw;right:-1vw;top:-6%}
-.lw-hero-wing-d .lashdeco-main{opacity:.55}
-
-/* ---- Both pages ---- */
-.lw-services{--lw:38vw;left:-8vw;bottom:-4%}
-.lw-reviews{--lw:40vw;right:-10vw;top:2%}
-/* A pair of lash lines framing the closing headline, like closed eyes */
-.lw-final-l,.lw-final-r{--lw:30vw;top:clamp(40px,7vw,110px)}
-.lw-final-l{left:-4vw}
-.lw-final-r{right:-4vw}
-.lw-final-l svg{transform-origin:70% 80%}
+/* Corners */
+.lw-hero{--lw:50vw;right:0;top:0}
+.lw-services{--lw:40vw;left:0;bottom:0}
+.lw-reviews{--lw:42vw;right:0;top:0}
+.lw-final-tl{--lw:44vw;left:0;top:0}
+.lw-final-tr{--lw:44vw;right:0;top:0}
+.lw-final-bl{--lw:36vw;left:0;bottom:0}
 
 @media (max-width:860px){
-  .lw-hero-wing{--lw:110vw;left:-30vw;top:-1%}
-  .lw-hero-rib{--lw:80vw;left:-26vw;bottom:-6%}
-  .lw-hero-wing-d{--lw:86vw;right:-6vw;top:-1%}
-  .lw-services{--lw:64vw;left:-24vw}
-  .lw-reviews{--lw:70vw;right:-28vw}
-  .lw-final-l,.lw-final-r{--lw:46vw;top:14px}
-  .lw-final-l{left:-14vw}
-  .lw-final-r{right:-14vw}
+  .lw-hero{--lw:84vw;top:-84px}
+  .lw-services,.lw-reviews{--lw:80vw}
+  .lw-final-tl,.lw-final-tr{--lw:90vw}
+  .lw-final-bl{--lw:70vw}
 }
