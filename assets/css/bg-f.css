@@ -1,6 +1,6 @@
 /* Background option F: "Evening"
-   Deep brand navy, a warm copper glow behind the photos, fine metallic arch lines with a
-   slow travelling glint. The hero and closing text switch to light colors to sit on the dark.
+   Deep brand navy, a warm copper glow behind the photos and very soft beams of light that
+   turn slowly. The hero and closing text switch to light colors to sit on the dark.
    Only the hero and final-CTA backgrounds (and the text colors on them) change. */
 
 .hero{background:
@@ -29,13 +29,13 @@
   animation:bgF-pulse 10s ease-in-out infinite alternate}
 @keyframes bgF-pulse{from{opacity:.8;transform:scale(.96)}to{opacity:1;transform:scale(1.04)}}
 
-/* Fine metallic arches framing the photos */
-.bgF-arches{--aw:clamp(460px,46vw,720px);position:absolute;bottom:0;width:var(--aw);height:calc(var(--aw)*1.125);
-  left:calc(50% + clamp(40px,22vw,330px) - var(--aw)/2)}
-.bgF-glint{stroke:#fff6ef;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:.05 .95;stroke-dashoffset:.05;opacity:0;
-  filter:drop-shadow(0 0 4px rgba(253,211,192,.9));
-  animation:bgF-travel 9s cubic-bezier(.45,0,.55,1) infinite;animation-delay:calc(1.2s + var(--i)*2.6s)}
-@keyframes bgF-travel{0%{stroke-dashoffset:.05;opacity:0}8%{opacity:1}88%{opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
+/* A hint of movement: very soft beams of light that turn slowly, like light through a window at dusk */
+.bgF-sweep{position:absolute;width:220vmax;aspect-ratio:1;left:calc(82% - 110vmax);top:calc(-30% - 110vmax);
+  background:repeating-conic-gradient(from 0deg,rgba(253,211,192,0) 0deg,rgba(253,211,192,.075) 9deg,rgba(253,211,192,0) 20deg,rgba(162,193,214,.05) 27deg,rgba(162,193,214,0) 36deg);
+  -webkit-mask:radial-gradient(closest-side,transparent 4%,#000 22%,rgba(0,0,0,.6) 48%,transparent 72%);
+          mask:radial-gradient(closest-side,transparent 4%,#000 22%,rgba(0,0,0,.6) 48%,transparent 72%);
+  animation:bgF-turn 140s linear infinite}
+@keyframes bgF-turn{to{transform:rotate(360deg)}}
 
 .bgF-grain{position:absolute;inset:0;opacity:.5;mix-blend-mode:soft-light;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .22 0 0 0 0 .18 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0/260px}
 
@@ -44,7 +44,6 @@
 
 @media (max-width:860px){
   .bgF-glow{left:calc(50% - clamp(520px,60vw,900px)/2);top:auto;bottom:-10%;margin-top:0}
-  .bgF-arches{--aw:min(118vw,560px);left:calc(50% - var(--aw)/2)}
 }
 
 /* Final CTA: the evening continues straight into the navy footer */
@@ -53,5 +52,4 @@
   linear-gradient(180deg,var(--navy-deep) 0%,#05345f 60%,var(--navy) 100%)}
 .final .wrap{position:relative;z-index:2}
 .bgF-final .bgF-glow{left:calc(50% - clamp(520px,60vw,900px)/2);top:-20%;margin-top:0;opacity:.85}
-.bgF-final .bgF-arches{--aw:clamp(520px,54vw,860px);left:calc(50% - var(--aw)/2)}
-@media (max-width:860px){.bgF-final .bgF-arches{--aw:min(130vw,600px)}}
+.bgF-final .bgF-sweep{left:calc(50% - 110vmax);top:calc(-60% - 110vmax)}

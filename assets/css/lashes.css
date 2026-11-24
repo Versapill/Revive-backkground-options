@@ -1,0 +1,38 @@
+/* Large lash-strand elements (after the logo's lash wing and the brand stationery).
+   They sit in 4 of the 10 home page sections, never wider than ~46% of the page,
+   with a slow drift and a soft highlight that slides along the strands. */
+
+.has-lash{position:relative;overflow:clip}
+.has-lash>.wrap{position:relative;z-index:2}
+
+.lashwrap{position:absolute;z-index:1;pointer-events:none;width:var(--lw,44vw);max-width:820px}
+.lashwrap svg{display:block;width:100%;height:auto;overflow:visible;
+  animation:lash-drift 16s ease-in-out infinite alternate;transform-origin:30% 80%}
+@keyframes lash-drift{from{transform:translate3d(0,0,0) rotate(0deg)}to{transform:translate3d(-12px,-14px,0) rotate(-1.6deg)}}
+
+/* Light sections: copper, tone on tone */
+.lw-light .lashdeco-main{opacity:.3}
+.lw-light .lashdeco-shadow{opacity:.06}
+/* Dark sections: metallic copper glowing softly on navy */
+.lw-dark .lashdeco-main{opacity:.6}
+.lw-dark .lashdeco-shadow{opacity:.35}
+.lw-dark svg{mix-blend-mode:screen}
+
+/* Placement, top to bottom */
+.lw-hero{--lw:42vw;left:-8vw;bottom:-19%}
+/* On the current page the strands sweep over the dunes instead of hiding behind them */
+.lw-hero.lw-light{--lw:40vw;left:-6vw;bottom:-6%;z-index:2}
+.lw-hero.lw-light .lashdeco-main{opacity:.38}
+.lw-services{--lw:38vw;left:-8vw;bottom:-4%}
+.lw-reviews{--lw:40vw;right:-8vw;top:4%}
+.lw-final{--lw:44vw;left:-8vw;bottom:-6%}
+.lw-final svg{transform-origin:70% 80%}
+
+@media (max-width:860px){
+  .lw-hero,.lw-hero.lw-light{--lw:80vw;left:-26vw;bottom:-6%}
+  .lw-services{--lw:64vw;left:-24vw}
+  .lw-reviews{--lw:64vw;right:-24vw}
+  .lw-final{--lw:72vw;left:-24vw}
+  .lw-light .lashdeco-main{opacity:.22}
+}
+.lw-final.lw-dark .lashdeco-main{opacity:.42}
