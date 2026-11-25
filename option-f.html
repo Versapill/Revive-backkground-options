@@ -114,44 +114,8 @@
 <main id="main">
 <!-- HERO -->
 <section class="has-lash hero" id="top">
-  <div class="lashwrap lw-hero lw-dark" aria-hidden="true"><svg class="lashdeco" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-      <defs>
-        <filter id="lash0-e" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="bump"/>
-          <feSpecularLighting in="bump" surfaceScale="6" specularConstant="0.45" specularExponent="16" lighting-color="#fff" result="spec">
-            <feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
-          <feComposite in="spec" in2="SourceAlpha" operator="in" result="hiLight"/>
-          <feDiffuseLighting in="bump" surfaceScale="6" diffuseConstant="1" lighting-color="#fff" result="diff">
-            <feDistantLight azimuth="235" elevation="38"/></feDiffuseLighting>
-          <feColorMatrix in="diff" type="matrix" values="0 0 0 0 0.000  0 0 0 0 0.039  0 0 0 0 0.094  -1.87 0 0 0 1.12" result="shadeA"/>
-          <feComposite in="shadeA" in2="SourceAlpha" operator="in" result="inner"/>
-          <feOffset in="bump" dx="5" dy="8" result="off"/>
-          <feFlood flood-color="#000a18" flood-opacity="0.32"/>
-          <feComposite in2="off" operator="in"/>
-          <feComposite in2="SourceAlpha" operator="out" result="outer"/>
-          <feMerge><feMergeNode in="outer"/><feMergeNode in="inner"/><feMergeNode in="hiLight"/></feMerge>
-        </filter>
-        <linearGradient id="lash0-foil" gradientUnits="userSpaceOnUse" x1="1000" y1="0" x2="480" y2="260">
-          <stop offset="0" stop-color="#b8735e"/><stop offset=".22" stop-color="#fdd3c0"/><stop offset=".38" stop-color="#d79a80"/>
-          <stop offset=".55" stop-color="#fbe2d3"/><stop offset=".75" stop-color="#c98673"/><stop offset="1" stop-color="#e7b29b"/>
-        </linearGradient>
-        <linearGradient id="lash0-ff" gradientUnits="userSpaceOnUse" x1="1000" y1="0" x2="440" y2="200">
-          <stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
-        </linearGradient>
-        <mask id="lash0-fm" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash0-ff)"/></mask>
-        <radialGradient id="lash0-fade" gradientUnits="userSpaceOnUse" cx="1000" cy="0" r="980">
-          <stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#fff"/><stop offset=".97" stop-color="#fff" stop-opacity="0"/>
-        </radialGradient>
-        <mask id="lash0-m" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash0-fade)"/></mask>
-      </defs>
-      <g mask="url(#lash0-m)">
-        <g class="lashdeco-emboss" fill="#000" filter="url(#lash0-e)"><path d="M-120.0 70.0 C440.0 160.0 740.0 -40.0 1120.0 -30.0 C744.0 9.8 444.0 209.8 -120.0 70.0Z"/><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 304.0 C440.0 340.0 740.0 128.0 1120.0 126.0 C745.9 169.3 445.9 381.3 -120.0 304.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/><path d="M-120.0 460.0 C440.0 460.0 740.0 240.0 1120.0 230.0 C749.6 291.7 449.6 511.7 -120.0 460.0Z"/><path d="M-120.0 538.0 C440.0 520.0 740.0 296.0 1120.0 282.0 C752.5 356.7 452.5 580.7 -120.0 538.0Z"/><path d="M-120.0 616.0 C440.0 580.0 740.0 352.0 1120.0 334.0 C751.9 404.5 451.9 632.5 -120.0 616.0Z"/><path d="M-120.0 694.0 C440.0 640.0 740.0 408.0 1120.0 386.0 C749.7 446.9 449.7 678.9 -120.0 694.0Z"/></g>
-        <g class="lashdeco-foil" mask="url(#lash0-fm)">
-          <g fill="url(#lash0-foil)"><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/></g>
-          <g fill="#000" filter="url(#lash0-e)" opacity=".7"><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/></g>
-        </g>
-      </g>
-    </svg></div>
+  <div class="shade shade-navy" aria-hidden="true"></div>
+  <div class="lashwrap lw-hero lw-tr" aria-hidden="true"><img src="assets/img/lash/fan-navy-tr.webp" alt="" width="1800" height="1100" decoding="async" fetchpriority="high"></div>
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow rl">Lake Forest · Orange County · Since 2019</span>
@@ -177,7 +141,7 @@
   </div>
   <!-- Background option F: evening -->
   <div class="bgF" aria-hidden="true">
-    <div class="bgF-sweep"></div>
+    
     <div class="bgF-glow layer" data-speed="0.06"></div>
     <div class="bgF-grain"></div>
     <div class="bgF-rule"></div>
@@ -199,44 +163,8 @@
 
 <!-- SERVICES -->
 <section class="has-lash sec services" id="services">
-  <div class="lashwrap lw-services lw-light" aria-hidden="true"><svg class="lashdeco" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-      <defs>
-        <filter id="lash1-e" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="bump"/>
-          <feSpecularLighting in="bump" surfaceScale="6" specularConstant="0.90" specularExponent="16" lighting-color="#fff" result="spec">
-            <feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
-          <feComposite in="spec" in2="SourceAlpha" operator="in" result="hiLight"/>
-          <feDiffuseLighting in="bump" surfaceScale="6" diffuseConstant="1" lighting-color="#fff" result="diff">
-            <feDistantLight azimuth="235" elevation="38"/></feDiffuseLighting>
-          <feColorMatrix in="diff" type="matrix" values="0 0 0 0 0.541  0 0 0 0 0.353  0 0 0 0 0.282  -1.10 0 0 0 0.66" result="shadeA"/>
-          <feComposite in="shadeA" in2="SourceAlpha" operator="in" result="inner"/>
-          <feOffset in="bump" dx="5" dy="8" result="off"/>
-          <feFlood flood-color="#8a5a48" flood-opacity="0.09"/>
-          <feComposite in2="off" operator="in"/>
-          <feComposite in2="SourceAlpha" operator="out" result="outer"/>
-          <feMerge><feMergeNode in="outer"/><feMergeNode in="inner"/><feMergeNode in="hiLight"/></feMerge>
-        </filter>
-        <linearGradient id="lash1-foil" gradientUnits="userSpaceOnUse" x1="0" y1="600" x2="520" y2="340">
-          <stop offset="0" stop-color="#b8735e"/><stop offset=".22" stop-color="#fdd3c0"/><stop offset=".38" stop-color="#d79a80"/>
-          <stop offset=".55" stop-color="#fbe2d3"/><stop offset=".75" stop-color="#c98673"/><stop offset="1" stop-color="#e7b29b"/>
-        </linearGradient>
-        <linearGradient id="lash1-ff" gradientUnits="userSpaceOnUse" x1="0" y1="600" x2="560" y2="400">
-          <stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
-        </linearGradient>
-        <mask id="lash1-fm" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash1-ff)"/></mask>
-        <radialGradient id="lash1-fade" gradientUnits="userSpaceOnUse" cx="0" cy="600" r="980">
-          <stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#fff"/><stop offset=".97" stop-color="#fff" stop-opacity="0"/>
-        </radialGradient>
-        <mask id="lash1-m" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash1-fade)"/></mask>
-      </defs>
-      <g mask="url(#lash1-m)">
-        <g class="lashdeco-emboss" fill="#000" filter="url(#lash1-e)"><path d="M1120.0 520.0 C640.0 300.0 300.0 640.0 -120.0 420.0 C304.2 588.2 644.2 248.2 1120.0 520.0Z"/><path d="M1120.0 438.0 C640.0 236.0 300.0 570.0 -120.0 356.0 C304.1 508.2 644.1 174.2 1120.0 438.0Z"/><path d="M1120.0 356.0 C640.0 172.0 300.0 500.0 -120.0 292.0 C302.5 450.6 642.5 122.6 1120.0 356.0Z"/><path d="M1120.0 274.0 C640.0 108.0 300.0 430.0 -120.0 228.0 C301.6 387.3 641.6 65.3 1120.0 274.0Z"/><path d="M1120.0 192.0 C640.0 44.0 300.0 360.0 -120.0 164.0 C301.3 303.1 641.3 -12.9 1120.0 192.0Z"/><path d="M1120.0 110.0 C640.0 -20.0 300.0 290.0 -120.0 100.0 C300.5 230.0 640.5 -80.0 1120.0 110.0Z"/></g>
-        <g class="lashdeco-foil" mask="url(#lash1-fm)">
-          <g fill="url(#lash1-foil)"><path d="M1120.0 438.0 C640.0 236.0 300.0 570.0 -120.0 356.0 C304.1 508.2 644.1 174.2 1120.0 438.0Z"/><path d="M1120.0 274.0 C640.0 108.0 300.0 430.0 -120.0 228.0 C301.6 387.3 641.6 65.3 1120.0 274.0Z"/></g>
-          <g fill="#000" filter="url(#lash1-e)" opacity=".7"><path d="M1120.0 438.0 C640.0 236.0 300.0 570.0 -120.0 356.0 C304.1 508.2 644.1 174.2 1120.0 438.0Z"/><path d="M1120.0 274.0 C640.0 108.0 300.0 430.0 -120.0 228.0 C301.6 387.3 641.6 65.3 1120.0 274.0Z"/></g>
-        </g>
-      </g>
-    </svg></div>
+  <div class="shade shade-light" aria-hidden="true"></div>
+  <div class="lashwrap lw-services lw-bl" aria-hidden="true"><img src="assets/img/lash/soft-light-bl.webp" alt="" width="1800" height="1100" decoding="async" loading="lazy"></div>
   <div class="wrap">
     <div class="sc-head">
       <div class="sec-head rv" style="margin-bottom:0">
@@ -481,44 +409,7 @@
 
 <!-- REVIEWS -->
 <section class="has-lash sec reviews" id="reviews">
-  <div class="lashwrap lw-reviews lw-light" aria-hidden="true"><svg class="lashdeco" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-      <defs>
-        <filter id="lash2-e" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="bump"/>
-          <feSpecularLighting in="bump" surfaceScale="6" specularConstant="0.90" specularExponent="16" lighting-color="#fff" result="spec">
-            <feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
-          <feComposite in="spec" in2="SourceAlpha" operator="in" result="hiLight"/>
-          <feDiffuseLighting in="bump" surfaceScale="6" diffuseConstant="1" lighting-color="#fff" result="diff">
-            <feDistantLight azimuth="235" elevation="38"/></feDiffuseLighting>
-          <feColorMatrix in="diff" type="matrix" values="0 0 0 0 0.541  0 0 0 0 0.353  0 0 0 0 0.282  -1.10 0 0 0 0.66" result="shadeA"/>
-          <feComposite in="shadeA" in2="SourceAlpha" operator="in" result="inner"/>
-          <feOffset in="bump" dx="5" dy="8" result="off"/>
-          <feFlood flood-color="#8a5a48" flood-opacity="0.09"/>
-          <feComposite in2="off" operator="in"/>
-          <feComposite in2="SourceAlpha" operator="out" result="outer"/>
-          <feMerge><feMergeNode in="outer"/><feMergeNode in="inner"/><feMergeNode in="hiLight"/></feMerge>
-        </filter>
-        <linearGradient id="lash2-foil" gradientUnits="userSpaceOnUse" x1="1000" y1="0" x2="480" y2="260">
-          <stop offset="0" stop-color="#b8735e"/><stop offset=".22" stop-color="#fdd3c0"/><stop offset=".38" stop-color="#d79a80"/>
-          <stop offset=".55" stop-color="#fbe2d3"/><stop offset=".75" stop-color="#c98673"/><stop offset="1" stop-color="#e7b29b"/>
-        </linearGradient>
-        <linearGradient id="lash2-ff" gradientUnits="userSpaceOnUse" x1="1000" y1="0" x2="440" y2="200">
-          <stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
-        </linearGradient>
-        <mask id="lash2-fm" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash2-ff)"/></mask>
-        <radialGradient id="lash2-fade" gradientUnits="userSpaceOnUse" cx="1000" cy="0" r="980">
-          <stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#fff"/><stop offset=".97" stop-color="#fff" stop-opacity="0"/>
-        </radialGradient>
-        <mask id="lash2-m" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash2-fade)"/></mask>
-      </defs>
-      <g mask="url(#lash2-m)">
-        <g class="lashdeco-emboss" fill="#000" filter="url(#lash2-e)"><path d="M-120.0 70.0 C440.0 160.0 740.0 -40.0 1120.0 -30.0 C744.0 9.8 444.0 209.8 -120.0 70.0Z"/><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 304.0 C440.0 340.0 740.0 128.0 1120.0 126.0 C745.9 169.3 445.9 381.3 -120.0 304.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/><path d="M-120.0 460.0 C440.0 460.0 740.0 240.0 1120.0 230.0 C749.6 291.7 449.6 511.7 -120.0 460.0Z"/><path d="M-120.0 538.0 C440.0 520.0 740.0 296.0 1120.0 282.0 C752.5 356.7 452.5 580.7 -120.0 538.0Z"/><path d="M-120.0 616.0 C440.0 580.0 740.0 352.0 1120.0 334.0 C751.9 404.5 451.9 632.5 -120.0 616.0Z"/><path d="M-120.0 694.0 C440.0 640.0 740.0 408.0 1120.0 386.0 C749.7 446.9 449.7 678.9 -120.0 694.0Z"/></g>
-        <g class="lashdeco-foil" mask="url(#lash2-fm)">
-          <g fill="url(#lash2-foil)"><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/></g>
-          <g fill="#000" filter="url(#lash2-e)" opacity=".7"><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/></g>
-        </g>
-      </g>
-    </svg></div>
+  <div class="lashwrap lw-reviews lw-tr" aria-hidden="true"><img src="assets/img/lash/fan-light-tr.webp" alt="" width="1800" height="1100" decoding="async" loading="lazy"></div>
   <div class="wrap">
     <div class="rev-top">
       <div class="rv" style="max-width:620px">
@@ -613,82 +504,9 @@
 
 <!-- FINAL CTA -->
 <section class="has-lash final" aria-labelledby="final-h">
-  <div class="lashwrap lw-final-bl lw-dark" aria-hidden="true"><svg class="lashdeco" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-      <defs>
-        <filter id="lash4-e" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="bump"/>
-          <feSpecularLighting in="bump" surfaceScale="6" specularConstant="0.45" specularExponent="16" lighting-color="#fff" result="spec">
-            <feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
-          <feComposite in="spec" in2="SourceAlpha" operator="in" result="hiLight"/>
-          <feDiffuseLighting in="bump" surfaceScale="6" diffuseConstant="1" lighting-color="#fff" result="diff">
-            <feDistantLight azimuth="235" elevation="38"/></feDiffuseLighting>
-          <feColorMatrix in="diff" type="matrix" values="0 0 0 0 0.000  0 0 0 0 0.039  0 0 0 0 0.094  -1.87 0 0 0 1.12" result="shadeA"/>
-          <feComposite in="shadeA" in2="SourceAlpha" operator="in" result="inner"/>
-          <feOffset in="bump" dx="5" dy="8" result="off"/>
-          <feFlood flood-color="#000a18" flood-opacity="0.32"/>
-          <feComposite in2="off" operator="in"/>
-          <feComposite in2="SourceAlpha" operator="out" result="outer"/>
-          <feMerge><feMergeNode in="outer"/><feMergeNode in="inner"/><feMergeNode in="hiLight"/></feMerge>
-        </filter>
-        <linearGradient id="lash4-foil" gradientUnits="userSpaceOnUse" x1="0" y1="600" x2="520" y2="340">
-          <stop offset="0" stop-color="#b8735e"/><stop offset=".22" stop-color="#fdd3c0"/><stop offset=".38" stop-color="#d79a80"/>
-          <stop offset=".55" stop-color="#fbe2d3"/><stop offset=".75" stop-color="#c98673"/><stop offset="1" stop-color="#e7b29b"/>
-        </linearGradient>
-        <linearGradient id="lash4-ff" gradientUnits="userSpaceOnUse" x1="0" y1="600" x2="560" y2="400">
-          <stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
-        </linearGradient>
-        <mask id="lash4-fm" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash4-ff)"/></mask>
-        <radialGradient id="lash4-fade" gradientUnits="userSpaceOnUse" cx="0" cy="600" r="980">
-          <stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#fff"/><stop offset=".97" stop-color="#fff" stop-opacity="0"/>
-        </radialGradient>
-        <mask id="lash4-m" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash4-fade)"/></mask>
-      </defs>
-      <g mask="url(#lash4-m)">
-        <g class="lashdeco-emboss" fill="#000" filter="url(#lash4-e)"><path d="M1120.0 520.0 C640.0 300.0 300.0 640.0 -120.0 420.0 C304.2 588.2 644.2 248.2 1120.0 520.0Z"/><path d="M1120.0 438.0 C640.0 236.0 300.0 570.0 -120.0 356.0 C304.1 508.2 644.1 174.2 1120.0 438.0Z"/><path d="M1120.0 356.0 C640.0 172.0 300.0 500.0 -120.0 292.0 C302.5 450.6 642.5 122.6 1120.0 356.0Z"/><path d="M1120.0 274.0 C640.0 108.0 300.0 430.0 -120.0 228.0 C301.6 387.3 641.6 65.3 1120.0 274.0Z"/><path d="M1120.0 192.0 C640.0 44.0 300.0 360.0 -120.0 164.0 C301.3 303.1 641.3 -12.9 1120.0 192.0Z"/><path d="M1120.0 110.0 C640.0 -20.0 300.0 290.0 -120.0 100.0 C300.5 230.0 640.5 -80.0 1120.0 110.0Z"/></g>
-        <g class="lashdeco-foil" mask="url(#lash4-fm)">
-          <g fill="url(#lash4-foil)"><path d="M1120.0 438.0 C640.0 236.0 300.0 570.0 -120.0 356.0 C304.1 508.2 644.1 174.2 1120.0 438.0Z"/><path d="M1120.0 274.0 C640.0 108.0 300.0 430.0 -120.0 228.0 C301.6 387.3 641.6 65.3 1120.0 274.0Z"/></g>
-          <g fill="#000" filter="url(#lash4-e)" opacity=".7"><path d="M1120.0 438.0 C640.0 236.0 300.0 570.0 -120.0 356.0 C304.1 508.2 644.1 174.2 1120.0 438.0Z"/><path d="M1120.0 274.0 C640.0 108.0 300.0 430.0 -120.0 228.0 C301.6 387.3 641.6 65.3 1120.0 274.0Z"/></g>
-        </g>
-      </g>
-    </svg></div>
-  <div class="lashwrap lw-final-tr lw-dark" aria-hidden="true"><svg class="lashdeco" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-      <defs>
-        <filter id="lash3-e" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="bump"/>
-          <feSpecularLighting in="bump" surfaceScale="6" specularConstant="0.45" specularExponent="16" lighting-color="#fff" result="spec">
-            <feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
-          <feComposite in="spec" in2="SourceAlpha" operator="in" result="hiLight"/>
-          <feDiffuseLighting in="bump" surfaceScale="6" diffuseConstant="1" lighting-color="#fff" result="diff">
-            <feDistantLight azimuth="235" elevation="38"/></feDiffuseLighting>
-          <feColorMatrix in="diff" type="matrix" values="0 0 0 0 0.000  0 0 0 0 0.039  0 0 0 0 0.094  -1.87 0 0 0 1.12" result="shadeA"/>
-          <feComposite in="shadeA" in2="SourceAlpha" operator="in" result="inner"/>
-          <feOffset in="bump" dx="5" dy="8" result="off"/>
-          <feFlood flood-color="#000a18" flood-opacity="0.32"/>
-          <feComposite in2="off" operator="in"/>
-          <feComposite in2="SourceAlpha" operator="out" result="outer"/>
-          <feMerge><feMergeNode in="outer"/><feMergeNode in="inner"/><feMergeNode in="hiLight"/></feMerge>
-        </filter>
-        <linearGradient id="lash3-foil" gradientUnits="userSpaceOnUse" x1="1000" y1="0" x2="480" y2="260">
-          <stop offset="0" stop-color="#b8735e"/><stop offset=".22" stop-color="#fdd3c0"/><stop offset=".38" stop-color="#d79a80"/>
-          <stop offset=".55" stop-color="#fbe2d3"/><stop offset=".75" stop-color="#c98673"/><stop offset="1" stop-color="#e7b29b"/>
-        </linearGradient>
-        <linearGradient id="lash3-ff" gradientUnits="userSpaceOnUse" x1="1000" y1="0" x2="440" y2="200">
-          <stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
-        </linearGradient>
-        <mask id="lash3-fm" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash3-ff)"/></mask>
-        <radialGradient id="lash3-fade" gradientUnits="userSpaceOnUse" cx="1000" cy="0" r="980">
-          <stop offset="0" stop-color="#fff"/><stop offset=".42" stop-color="#fff"/><stop offset=".97" stop-color="#fff" stop-opacity="0"/>
-        </radialGradient>
-        <mask id="lash3-m" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="600"><rect width="1000" height="600" fill="url(#lash3-fade)"/></mask>
-      </defs>
-      <g mask="url(#lash3-m)">
-        <g class="lashdeco-emboss" fill="#000" filter="url(#lash3-e)"><path d="M-120.0 70.0 C440.0 160.0 740.0 -40.0 1120.0 -30.0 C744.0 9.8 444.0 209.8 -120.0 70.0Z"/><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 304.0 C440.0 340.0 740.0 128.0 1120.0 126.0 C745.9 169.3 445.9 381.3 -120.0 304.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/><path d="M-120.0 460.0 C440.0 460.0 740.0 240.0 1120.0 230.0 C749.6 291.7 449.6 511.7 -120.0 460.0Z"/><path d="M-120.0 538.0 C440.0 520.0 740.0 296.0 1120.0 282.0 C752.5 356.7 452.5 580.7 -120.0 538.0Z"/><path d="M-120.0 616.0 C440.0 580.0 740.0 352.0 1120.0 334.0 C751.9 404.5 451.9 632.5 -120.0 616.0Z"/><path d="M-120.0 694.0 C440.0 640.0 740.0 408.0 1120.0 386.0 C749.7 446.9 449.7 678.9 -120.0 694.0Z"/></g>
-        <g class="lashdeco-foil" mask="url(#lash3-fm)">
-          <g fill="url(#lash3-foil)"><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/></g>
-          <g fill="#000" filter="url(#lash3-e)" opacity=".7"><path d="M-120.0 148.0 C440.0 220.0 740.0 16.0 1120.0 22.0 C746.2 77.2 446.2 281.2 -120.0 148.0Z"/><path d="M-120.0 226.0 C440.0 280.0 740.0 72.0 1120.0 74.0 C746.8 127.8 446.8 335.8 -120.0 226.0Z"/><path d="M-120.0 382.0 C440.0 400.0 740.0 184.0 1120.0 178.0 C746.4 222.9 446.4 438.9 -120.0 382.0Z"/></g>
-        </g>
-      </g>
-    </svg></div>
+  <div class="shade shade-navy" aria-hidden="true"></div>
+  <div class="lashwrap lw-final lw-tl" aria-hidden="true"><img src="assets/img/lash/fan-navy-tl.webp" alt="" width="1800" height="1100" decoding="async" loading="lazy"></div>
+  <div class="lashwrap lw-final-soft lw-br" aria-hidden="true"><img src="assets/img/lash/soft-navy-br.webp" alt="" width="1800" height="1100" decoding="async" loading="lazy"></div>
   <div class="wrap">
     <span class="eyebrow rv">Your time to glow</span>
     <h2 id="final-h" class="rv d1">Ready to <em>revive</em> your natural beauty?</h2>
@@ -700,7 +518,7 @@
     </div>
   </div>
   <div class="bgF bgF-final" aria-hidden="true">
-    <div class="bgF-sweep"></div>
+    
     <div class="bgF-glow"></div>
     <div class="bgF-grain"></div>
   </div>

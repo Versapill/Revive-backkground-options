@@ -1,26 +1,49 @@
-/* Embossed lash ribbons, after Revive's Instagram and stationery artwork.
-   Ribbons pressed into the surface, shown by light and shadow only, with a few catching copper foil.
-   They sweep in from a corner and fade out. They never move.
-   Used in 4 of the 10 home page sections; each is at most half the page width. */
+/* Roland's feedback: Sylwia-style lash artwork in the page backgrounds, plus a hint of movement.
+
+   Lash artwork (assets/img/lash/*.webp, made by tools/lash_art.py)
+   - "fan": fine lash strands pressed into the surface from a corner, like the stationery card,
+     with the first strands in rose-gold foil. "soft": wide, barely-there strokes, like the banner.
+   - Used in 4 of the 10 home page sections; each one is at most half the page width.
+   - The artwork itself never moves.
+
+   Movement: two very large, soft pools of light drift slowly across a few sections
+   (about half a minute per pass), so the page never looks static. */
 
 .has-lash{position:relative;overflow:clip}
-.has-lash>.wrap{position:relative;z-index:2}
+.has-lash>.wrap,.has-lash>.landscape{position:relative;z-index:2}
+.has-lash>.landscape{position:absolute}
+.final.has-lash>.landscape{position:relative}
 
-.lashwrap{position:absolute;z-index:1;pointer-events:none;width:var(--lw,46vw);max-width:900px}
-.lashwrap svg{display:block;width:100%;height:auto}
-.lw-light{opacity:.95}
+.lashwrap{position:absolute;z-index:1;pointer-events:none;width:var(--lw,46vw);max-width:920px}
+.lashwrap img{display:block;width:100%;height:auto}
+.lw-tl{left:0;top:0}.lw-tr{right:0;top:0}.lw-bl{left:0;bottom:0}.lw-br{right:0;bottom:0}
 
-/* Corners */
-.lw-hero{--lw:50vw;right:0;top:0}
-.lw-services{--lw:40vw;left:0;bottom:0}
-.lw-reviews{--lw:42vw;right:0;top:0}
-.lw-final-tl{--lw:44vw;left:0;top:0}
-.lw-final-tr{--lw:44vw;right:0;top:0}
-.lw-final-bl{--lw:36vw;left:0;bottom:0}
+/* Placements */
+.lw-hero{--lw:48vw}
+.lw-services{--lw:44vw}
+.lw-reviews{--lw:42vw}
+.lw-final{--lw:40vw}
+.lw-final-soft{--lw:38vw}
+
+/* Drifting light */
+.shade{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.shade::before,.shade::after{content:"";position:absolute;width:75vmax;aspect-ratio:1;border-radius:50%;will-change:transform}
+.shade::before{left:-25vmax;top:-30vmax;background:radial-gradient(closest-side,var(--s1),transparent);
+  animation:shade-a 28s ease-in-out infinite alternate}
+.shade::after{right:-28vmax;bottom:-34vmax;background:radial-gradient(closest-side,var(--s2),transparent);
+  animation:shade-b 36s ease-in-out infinite alternate}
+@keyframes shade-a{from{transform:translate(0,0) scale(1)}to{transform:translate(48vw,14vh) scale(1.18)}}
+@keyframes shade-b{from{transform:translate(0,0) scale(1.1)}to{transform:translate(-44vw,-12vh) scale(.92)}}
+
+.shade-light{--s1:rgba(255,255,255,.75);--s2:rgba(240,186,160,.3)}
+.shade-sky{--s1:rgba(255,255,255,.6);--s2:rgba(250,206,180,.4)}
+.shade-navy{--s1:rgba(122,170,232,.2);--s2:rgba(233,171,142,.16)}
+
+@media (prefers-reduced-motion:reduce){.shade::before,.shade::after{animation:none}}
 
 @media (max-width:860px){
-  .lw-hero{--lw:84vw;top:-84px}
-  .lw-services,.lw-reviews{--lw:80vw}
-  .lw-final-tl,.lw-final-tr{--lw:90vw}
-  .lw-final-bl{--lw:70vw}
+  .lw-hero{--lw:72vw;top:-30px}
+  .lw-services,.lw-reviews{--lw:78vw}
+  .lw-final,.lw-final-soft{--lw:80vw}
+  .shade::before,.shade::after{width:110vmax}
 }
