@@ -47,3 +47,30 @@
   .lw-final,.lw-final-soft{--lw:80vw}
   .shade::before,.shade::after{width:110vmax}
 }
+
+/* Movement in the lash art (Roland: no static background)
+   - the strands sway very slowly from their root corner, like lashes moving
+   - a soft band of light glides along the strands; it only lights the artwork */
+.lashmove{position:relative;transform-origin:var(--root,0 0);will-change:transform;
+  animation:lash-sway 11s ease-in-out infinite alternate}
+.lw-tr .lashmove,.lw-br .lashmove{--sway:-1}
+.lw-tl .lashmove{--root:0 0}.lw-tr .lashmove{--root:100% 0}.lw-bl .lashmove{--root:0 100%}.lw-br .lashmove{--root:100% 100%}
+@keyframes lash-sway{
+  from{transform:rotate(calc(var(--sway,1) * -1.8deg)) scale(1.03)}
+  to{transform:rotate(calc(var(--sway,1) * 1.6deg)) scale(1.07)}}
+.lw-services .lashmove,.lw-final-soft .lashmove{animation-duration:14s;animation-delay:-5s}
+.lw-reviews .lashmove{animation-delay:-3s}
+
+.lashsheen{position:absolute;inset:0;pointer-events:none;-webkit-mask-size:100% 100%;mask-size:100% 100%;
+  background:linear-gradient(110deg,transparent 40%,var(--sheen,rgba(255,246,238,.9)) 50%,transparent 60%) 120% 0/300% 100% no-repeat;
+  opacity:.7;animation:lash-sheen 9s cubic-bezier(.45,0,.3,1) infinite}
+@keyframes lash-sheen{0%{background-position:120% 0}65%,100%{background-position:-20% 0}}
+.lw-tr .lashsheen,.lw-br .lashsheen{animation-direction:reverse}
+.lw-reviews .lashsheen{animation-delay:-4s}
+.hero .lashsheen,.final .lashsheen{--sheen:rgba(255,226,206,.8)}
+.lw-services .lashsheen,.lw-final-soft .lashsheen{opacity:.45}.lw-final-soft .lashsheen{animation-delay:-6s}
+
+/* let the art sit a little past the page edge so the sway never shows a gap */
+.lw-tl,.lw-bl{left:-2vw}.lw-tr,.lw-br{right:-2vw}
+
+@media (prefers-reduced-motion:reduce){.lashmove,.lashsheen{animation:none}}
