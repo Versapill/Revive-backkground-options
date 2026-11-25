@@ -3,11 +3,10 @@
    Lash artwork (assets/img/lash/*.webp, made by tools/lash_art.py)
    - "fan": fine lash strands pressed into the surface from a corner, like the stationery card,
      with the first strands in rose-gold foil. "soft": wide, barely-there strokes, like the banner.
-   - Used in 4 of the 10 home page sections; each one is at most half the page width.
-   - The artwork itself never moves.
+   - Used in 8 of the 10 home page sections; each one is at most about half the page width.
 
    Movement: two very large, soft pools of light drift slowly across a few sections
-   (about half a minute per pass), so the page never looks static. */
+   (about 15-20 seconds per pass), so the page never looks static. */
 
 .has-lash{position:relative;overflow:clip}
 .has-lash>.wrap,.has-lash>.landscape{position:relative;z-index:2}
@@ -29,17 +28,16 @@
 .shade{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .shade::before,.shade::after{content:"";position:absolute;width:75vmax;aspect-ratio:1;border-radius:50%;will-change:transform}
 .shade::before{left:-25vmax;top:-30vmax;background:radial-gradient(closest-side,var(--s1),transparent);
-  animation:shade-a 28s ease-in-out infinite alternate}
+  animation:shade-a 16s ease-in-out infinite alternate}
 .shade::after{right:-28vmax;bottom:-34vmax;background:radial-gradient(closest-side,var(--s2),transparent);
-  animation:shade-b 36s ease-in-out infinite alternate}
+  animation:shade-b 21s ease-in-out infinite alternate}
 @keyframes shade-a{from{transform:translate(0,0) scale(1)}to{transform:translate(48vw,14vh) scale(1.18)}}
 @keyframes shade-b{from{transform:translate(0,0) scale(1.1)}to{transform:translate(-44vw,-12vh) scale(.92)}}
 
-.shade-light{--s1:rgba(255,255,255,.75);--s2:rgba(240,186,160,.3)}
-.shade-sky{--s1:rgba(255,255,255,.6);--s2:rgba(250,206,180,.4)}
-.shade-navy{--s1:rgba(122,170,232,.2);--s2:rgba(233,171,142,.16)}
+.shade-light{--s1:rgba(255,255,255,.95);--s2:rgba(236,176,148,.38)}
+.shade-sky{--s1:rgba(255,255,255,.8);--s2:rgba(246,190,160,.5)}
+.shade-navy{--s1:rgba(130,178,240,.3);--s2:rgba(233,171,142,.24)}
 
-@media (prefers-reduced-motion:reduce){.shade::before,.shade::after{animation:none}}
 
 @media (max-width:860px){
   .lw-hero{--lw:72vw;top:-30px}
@@ -49,28 +47,47 @@
 }
 
 /* Movement in the lash art (Roland: no static background)
-   - the strands sway very slowly from their root corner, like lashes moving
-   - a soft band of light glides along the strands; it only lights the artwork */
+   - the strands sway from their root corner and drift a little, like lashes moving
+   - a band of light glides along the strands; it only lights the artwork */
 .lashmove{position:relative;transform-origin:var(--root,0 0);will-change:transform;
-  animation:lash-sway 11s ease-in-out infinite alternate}
+  animation:lash-sway 8s ease-in-out infinite alternate}
 .lw-tr .lashmove,.lw-br .lashmove{--sway:-1}
 .lw-tl .lashmove{--root:0 0}.lw-tr .lashmove{--root:100% 0}.lw-bl .lashmove{--root:0 100%}.lw-br .lashmove{--root:100% 100%}
 @keyframes lash-sway{
-  from{transform:rotate(calc(var(--sway,1) * -1.8deg)) scale(1.03)}
-  to{transform:rotate(calc(var(--sway,1) * 1.6deg)) scale(1.07)}}
-.lw-services .lashmove,.lw-final-soft .lashmove{animation-duration:14s;animation-delay:-5s}
-.lw-reviews .lashmove{animation-delay:-3s}
+  from{transform:rotate(calc(var(--sway,1) * -4deg)) scale(1.05)}
+  to{transform:rotate(calc(var(--sway,1) * 3.5deg)) translateY(1.5%) scale(1.1)}}
+.lw-hero-soft .lashmove,.lw-services .lashmove,.lw-private .lashmove,.lw-final-soft .lashmove{animation-duration:10s;animation-delay:-4s}
+.lw-reviews .lashmove,.lw-picker .lashmove{animation-delay:-3s}
+.lw-steps .lashmove,.lw-visit .lashmove{animation-delay:-6s}
 
 .lashsheen{position:absolute;inset:0;pointer-events:none;-webkit-mask-size:100% 100%;mask-size:100% 100%;
-  background:linear-gradient(110deg,transparent 40%,var(--sheen,rgba(255,246,238,.9)) 50%,transparent 60%) 120% 0/300% 100% no-repeat;
-  opacity:.7;animation:lash-sheen 9s cubic-bezier(.45,0,.3,1) infinite}
-@keyframes lash-sheen{0%{background-position:120% 0}65%,100%{background-position:-20% 0}}
+  background:linear-gradient(110deg,transparent 38%,var(--sheen,rgba(255,250,245,1)) 50%,transparent 62%) 120% 0/300% 100% no-repeat;
+  opacity:.9;animation:lash-sheen 6s cubic-bezier(.45,0,.3,1) infinite}
+@keyframes lash-sheen{0%{background-position:120% 0}70%,100%{background-position:-20% 0}}
 .lw-tr .lashsheen,.lw-br .lashsheen{animation-direction:reverse}
-.lw-reviews .lashsheen{animation-delay:-4s}
-.hero .lashsheen,.final .lashsheen{--sheen:rgba(255,226,206,.8)}
-.lw-services .lashsheen,.lw-final-soft .lashsheen{opacity:.45}.lw-final-soft .lashsheen{animation-delay:-6s}
+.hero .lashsheen,.final .lashsheen,.steps .lashsheen{--sheen:rgba(255,222,200,.95)}
+.lw-hero-soft .lashsheen,.lw-services .lashsheen,.lw-private .lashsheen,.lw-final-soft .lashsheen{opacity:.55;animation-delay:-2s}
+.lw-reviews .lashsheen,.lw-picker .lashsheen{animation-delay:-3s}
+.lw-steps .lashsheen,.lw-visit .lashsheen{animation-delay:-1.5s}
 
-/* let the art sit a little past the page edge so the sway never shows a gap */
-.lw-tl,.lw-bl{left:-2vw}.lw-tr,.lw-br{right:-2vw}
+/* let the art sit past the page edge so the sway never shows a gap */
+.lw-tl,.lw-bl{left:-3vw}.lw-tr,.lw-br{right:-3vw}
 
-@media (prefers-reduced-motion:reduce){.lashmove,.lashsheen{animation:none}}
+/* more sections */
+.lw-hero-soft{--lw:40vw}
+.lw-services-fan{--lw:36vw}
+.lw-picker{--lw:40vw}
+.lw-private{--lw:44vw}
+.lw-steps{--lw:40vw}
+.lw-visit{--lw:38vw}
+.has-lash>.wave{z-index:2}
+@media (max-width:860px){
+  .lw-hero-soft,.lw-services-fan,.lw-picker,.lw-private,.lw-steps,.lw-visit{--lw:78vw}
+}
+
+/* people who ask their device for less motion get a slower, calmer version, not a still page */
+@media (prefers-reduced-motion:reduce){
+  .lashmove{animation-duration:16s}
+  .lashsheen{animation-duration:12s}
+  .shade::before{animation-duration:40s}.shade::after{animation-duration:50s}
+}
