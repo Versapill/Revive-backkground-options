@@ -1,61 +1,57 @@
-/* Roland's feedback: Sylwia-style lash artwork in the page backgrounds, plus a hint of movement.
+/* Roland's feedback: Sylwia-style lash artwork in the page backgrounds, and a page that is never static.
 
    Lash artwork (assets/img/lash/*.webp, made by tools/lash_art.py)
    - "fan": fine lash strands pressed into the surface from a corner, like the stationery card,
      with the first strands in rose-gold foil. "soft": wide, barely-there strokes, like the banner.
-   - Used in 8 of the 10 home page sections; each one is at most about half the page width.
+   - Large (up to half the page width) in 8 of the 10 sections.
+   - assets/js/lash-mask.js fades the artwork out softly wherever text, buttons, photos or cards
+     sit, so the strands flow around the content instead of running under it.
 
-   Movement: two very large, soft pools of light drift slowly across a few sections
-   (about 15-20 seconds per pass), so the page never looks static. */
+   Movement
+   - the strands sway slowly from their corner; a band of light glides along them
+   - rose-gold sparkles twinkle on the foil strands
+   - single loose lashes drift slowly through the open space
+   - two soft pools of light drift behind the sections */
 
 .has-lash{position:relative;overflow:clip}
-.has-lash>.wrap,.has-lash>.landscape{position:relative;z-index:2}
-.has-lash>.landscape{position:absolute}
+.has-lash>.wrap,.has-lash>.landscape,.has-lash>.wave{position:relative;z-index:2}
+.has-lash>.landscape,.has-lash>.wave{position:absolute}
 .final.has-lash>.landscape{position:relative}
+.hero-art .sun{display:none}  /* the pink sun circle behind the hero photos */
 
-.lashwrap{position:absolute;z-index:1;pointer-events:none;width:var(--lw,46vw);max-width:920px}
+/* ------------------------------------------------------------------ placement */
+.lashwrap{position:absolute;z-index:1;pointer-events:none;width:var(--lw,46vw);max-width:940px;--ox:-2vw;--oy:0px}
 .lashwrap img{display:block;width:100%;height:auto}
-.lw-tl{left:0;top:0}.lw-tr{right:0;top:0}.lw-bl{left:0;bottom:0}.lw-br{right:0;bottom:0}
+.lw-tl{left:var(--ox);top:var(--oy)}.lw-tr{right:var(--ox);top:var(--oy)}
+.lw-bl{left:var(--ox);bottom:var(--oy)}.lw-br{right:var(--ox);bottom:var(--oy)}
 
-/* Placements */
 .lw-hero{--lw:48vw}
+.lw-hero-soft{--lw:40vw}
+.lw-services-fan{--lw:42vw}
 .lw-services{--lw:44vw}
-.lw-reviews{--lw:42vw}
-.lw-final{--lw:40vw}
-.lw-final-soft{--lw:38vw}
-
-/* Drifting light */
-.shade{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.shade::before,.shade::after{content:"";position:absolute;width:75vmax;aspect-ratio:1;border-radius:50%;will-change:transform}
-.shade::before{left:-25vmax;top:-30vmax;background:radial-gradient(closest-side,var(--s1),transparent);
-  animation:shade-a 16s ease-in-out infinite alternate}
-.shade::after{right:-28vmax;bottom:-34vmax;background:radial-gradient(closest-side,var(--s2),transparent);
-  animation:shade-b 21s ease-in-out infinite alternate}
-@keyframes shade-a{from{transform:translate(0,0) scale(1)}to{transform:translate(48vw,14vh) scale(1.18)}}
-@keyframes shade-b{from{transform:translate(0,0) scale(1.1)}to{transform:translate(-44vw,-12vh) scale(.92)}}
-
-.shade-light{--s1:rgba(255,255,255,.95);--s2:rgba(236,176,148,.38)}
-.shade-sky{--s1:rgba(255,255,255,.8);--s2:rgba(246,190,160,.5)}
-.shade-navy{--s1:rgba(130,178,240,.3);--s2:rgba(233,171,142,.24)}
-
-
+.lw-picker{--lw:44vw}
+.lw-private{--lw:46vw}
+.lw-steps{--lw:50vw}
+.lw-reviews{--lw:46vw}
+.lw-visit{--lw:44vw}
+.lw-final{--lw:48vw}
+.lw-final-soft{--lw:42vw}
 @media (max-width:860px){
-  .lw-hero{--lw:72vw;top:-30px}
-  .lw-services,.lw-reviews{--lw:78vw}
-  .lw-final,.lw-final-soft{--lw:80vw}
-  .shade::before,.shade::after{width:110vmax}
+  .lashwrap{--lw:96vw}
+  .lw-hero-soft,.lw-services,.lw-private,.lw-final-soft{--lw:90vw}
 }
 
-/* Movement in the lash art (Roland: no static background)
-   - the strands sway from their root corner and drift a little, like lashes moving
-   - a band of light glides along the strands; it only lights the artwork */
+/* the fade-around-content mask (set by lash-mask.js) */
+.lashwrap.masked,.lashfloat.masked{-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+
+/* ------------------------------------------------------------------ sway + light band */
 .lashmove{position:relative;transform-origin:var(--root,0 0);will-change:transform;
   animation:lash-sway 8s ease-in-out infinite alternate}
 .lw-tr .lashmove,.lw-br .lashmove{--sway:-1}
 .lw-tl .lashmove{--root:0 0}.lw-tr .lashmove{--root:100% 0}.lw-bl .lashmove{--root:0 100%}.lw-br .lashmove{--root:100% 100%}
 @keyframes lash-sway{
-  from{transform:rotate(calc(var(--sway,1) * -2.6deg)) scale(1.04)}
-  to{transform:rotate(calc(var(--sway,1) * 2.4deg)) translateY(1%) scale(1.08)}}
+  from{transform:rotate(calc(var(--sway,1) * -3.4deg)) scale(1.03)}
+  to{transform:rotate(calc(var(--sway,1) * 3deg)) translateY(1%) scale(1.07)}}
 .lw-hero-soft .lashmove,.lw-services .lashmove,.lw-private .lashmove,.lw-final-soft .lashmove{animation-duration:10s;animation-delay:-4s}
 .lw-reviews .lashmove,.lw-picker .lashmove{animation-delay:-3s}
 .lw-steps .lashmove,.lw-visit .lashmove{animation-delay:-6s}
@@ -70,57 +66,45 @@
 .lw-reviews .lashsheen,.lw-picker .lashsheen{animation-delay:-3s}
 .lw-steps .lashsheen,.lw-visit .lashsheen{animation-delay:-1.5s}
 
-/* let the art sit past the page edge so the sway never shows a gap */
-.lw-tl,.lw-bl{left:-3vw}.lw-tr,.lw-br{right:-3vw}
+/* ------------------------------------------------------------------ sparkles on the foil */
+.spark{position:absolute;width:var(--s,22px);aspect-ratio:1;margin:calc(var(--s,22px)/-2) 0 0 calc(var(--s,22px)/-2);
+  opacity:0;transform:scale(.2) rotate(0deg);animation:spark 4.2s ease-in-out infinite;animation-delay:var(--d,0s)}
+.spark svg{display:block;width:100%;height:100%;filter:drop-shadow(0 0 6px rgba(253,211,192,.9))}
+@keyframes spark{0%,100%{opacity:0;transform:scale(.2) rotate(0deg)}
+  12%{opacity:1;transform:scale(1) rotate(45deg)}28%{opacity:0;transform:scale(.3) rotate(90deg)}}
 
-/* more sections */
-.lw-hero-soft{--lw:40vw}
-.lw-services-fan{--lw:36vw}
-.lw-picker{--lw:40vw}
-.lw-private{--lw:44vw}
-.lw-steps{--lw:40vw}
-.lw-visit{--lw:38vw}
-.has-lash>.wave{z-index:2}
-@media (max-width:860px){
-  .lw-hero-soft,.lw-services-fan,.lw-picker,.lw-private,.lw-steps,.lw-visit{--lw:78vw}
-}
+/* ------------------------------------------------------------------ loose lashes drifting */
+.lashfloat{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.loose{position:absolute;left:var(--x);top:var(--y);width:var(--w,150px);opacity:0;will-change:transform,opacity;
+  animation:loose var(--t,22s) ease-in-out infinite;animation-delay:var(--d,0s)}
+.loose svg{display:block;width:100%;height:auto;overflow:visible}
+@keyframes loose{
+  0%{opacity:0;transform:translate(0,30px) rotate(var(--r0,-10deg))}
+  15%{opacity:var(--o,.85)}
+  50%{transform:translate(calc(var(--dx,80px)/2),calc(var(--dy,-140px)/2 - 14px)) rotate(var(--r1,6deg))}
+  85%{opacity:var(--o,.85)}
+  100%{opacity:0;transform:translate(var(--dx,80px),var(--dy,-140px)) rotate(var(--r0,-10deg))}}
+@media (max-width:860px){.loose{--w:110px}}
+
+/* ------------------------------------------------------------------ drifting light */
+.shade{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.shade::before,.shade::after{content:"";position:absolute;width:75vmax;aspect-ratio:1;border-radius:50%;will-change:transform}
+.shade::before{left:-25vmax;top:-30vmax;background:radial-gradient(closest-side,var(--s1),transparent);
+  animation:shade-a 16s ease-in-out infinite alternate}
+.shade::after{right:-28vmax;bottom:-34vmax;background:radial-gradient(closest-side,var(--s2),transparent);
+  animation:shade-b 21s ease-in-out infinite alternate}
+@keyframes shade-a{from{transform:translate(0,0) scale(1)}to{transform:translate(48vw,14vh) scale(1.18)}}
+@keyframes shade-b{from{transform:translate(0,0) scale(1.1)}to{transform:translate(-44vw,-12vh) scale(.92)}}
+.shade-light{--s1:rgba(255,255,255,.95);--s2:rgba(236,176,148,.38)}
+.shade-sky{--s1:rgba(255,255,255,.8);--s2:rgba(246,190,160,.5)}
+.shade-navy{--s1:rgba(130,178,240,.3);--s2:rgba(233,171,142,.24)}
+@media (max-width:860px){.shade::before,.shade::after{width:110vmax}}
 
 /* people who ask their device for less motion get a slower, calmer version, not a still page */
 @media (prefers-reduced-motion:reduce){
   .lashmove{animation-duration:16s}
   .lashsheen{animation-duration:12s}
+  .spark{animation-duration:8s}
+  .loose{animation-duration:calc(var(--t,22s) * 2)}
   .shade::before{animation-duration:40s}.shade::after{animation-duration:50s}
-}
-
-/* the pink sun circle behind the hero photos is gone, so it never sits under the lash art */
-.hero-art .sun{display:none}
-
-/* ---------------------------------------------------------------------------------------------
-   Placements fitted to the empty space of each section, so no lash art sits under text, photos,
-   buttons or cards (measured in the browser against every content box, with a margin for the sway).
-   --lw width, --ox how far past the page edge, --oy how far up (top corners) / down (bottom corners)
-   --------------------------------------------------------------------------------------------- */
-.lashwrap{--ox:-1.4vw;--oy:0px}
-.lw-tl{left:var(--ox);top:var(--oy)}.lw-tr{right:var(--ox);top:var(--oy)}
-.lw-bl{left:var(--ox);bottom:var(--oy)}.lw-br{right:var(--ox);bottom:var(--oy)}
-@media (min-width:861px){
-  .lw-hero{--lw:23vw;--ox:-4.2vw}
-  .lw-hero-soft{--lw:29vw;--oy:-40px}
-  .lw-services-fan{--lw:27.5vw;--oy:-40px}
-  .lw-services{--lw:26.4vw;--oy:-80px}
-  .lw-picker{--lw:29vw;--oy:-80px}
-  .lw-private{--lw:26.4vw;--ox:-4.2vw;--oy:-40px}
-  .lw-steps{--lw:50vw;--oy:-160px}
-  .lw-reviews{--lw:40vw;--oy:-120px}
-  .lw-visit{--lw:30.5vw;--oy:-80px}
-  .lw-final{--lw:47vw}
-  .lw-final-soft{--lw:var(--fs-w,34vw);--oy:var(--fs-y,0px)}
-}
-@media (max-width:860px){
-  .lashwrap{--ox:-2.6vw;--oy:-40px}
-  .lw-hero,.lw-services{display:none}
-  .lw-hero-soft,.lw-services-fan,.lw-reviews{--lw:96vw;--oy:-80px}
-  .lw-picker,.lw-visit{--lw:61vw}
-  .lw-private{--lw:46vw}
-  .lw-steps,.lw-final,.lw-final-soft{--lw:66vw}
 }
